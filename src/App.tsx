@@ -46,7 +46,7 @@ function App(): any {
               <button type='button' id="outreach-btn"><FontAwesomeIcon icon={faGoogle} size='lg' className='google-signin-icon'/> Sign In To Gmail To Continue</button>
           </div> */}
           <div className='signin_btn'>
-              <a href="https://master.d1l3klsse2xzei.amplifyapp.com/auth/google" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGoogle} size='lg' className='google-signin-icon'/> Sign In To Gmail To Continue</a>
+              <a href="https://theoutreachapp.onrender.com/auth/google" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGoogle} size='lg' className='google-signin-icon'/> Sign In To Gmail To Continue</a>
           </div>
           <GlobalStyles />
             <Routes>
