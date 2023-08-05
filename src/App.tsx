@@ -32,11 +32,6 @@ function App(): any {
    }
   }, [])
 
-  const handleClick = () => {
-    window.location.href = process.env.REACT_APP_REDIRECT_LIVE!
- }
- 
-
   return (
     <DataProvider>
       <ToastContainer />
@@ -46,9 +41,12 @@ function App(): any {
             Welcome To The Outreach
           </h1>
           <h2>Your best mass gmail sender</h2>
-
+          
           <div className='signin_btn'>
-              <button type='button' id="outreach-btn" onClick={handleClick}><FontAwesomeIcon icon={faGoogle} size='lg' className='google-signin-icon'/> Sign In To Gmail To Continue</button>
+              <button type='button' id="outreach-btn"><FontAwesomeIcon icon={faGoogle} size='lg' className='google-signin-icon'/> Sign In To Gmail To Continue</button>
+          </div>
+          <div className='signin_btn'>
+              <a href="https://master.d1l3klsse2xzei.amplifyapp.com/auth/google" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGoogle} size='lg' className='google-signin-icon'/> Sign In To Gmail To Continue</a>
           </div>
           <GlobalStyles />
             <Routes>

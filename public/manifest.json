@@ -5,18 +5,17 @@
 	"author": "Outreach",
 	"version": "3.0",
 	"description": "The Outreach",
-	"permissions": ["activeTab" ,"tabs", "storage"],
+	"permissions": ["activeTab" ,"tabs", "storage","scripting"],
 	"action": {
 	  "default_icon": {
 		"16": "images/logo.png"
 	  },
-	  "default_tab": "index.html",
 	  "default_popup": "index.html"
 
 	},
 	"content_scripts": [
 	  {
-		"matches": ["https://mail.google.com/*"],
+		"matches": ["<all_urls>"],
 		"js": ["content.js"],
 		"css":["styles.css"],
 		"run_at": "document_end"
