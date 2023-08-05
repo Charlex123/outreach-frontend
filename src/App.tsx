@@ -42,9 +42,9 @@ function App(): any {
           </h1>
           <h2>Your best mass gmail sender</h2>
           
-          <div className='signin_btn'>
+          {/* <div className='signin_btn'>
               <button type='button' id="outreach-btn"><FontAwesomeIcon icon={faGoogle} size='lg' className='google-signin-icon'/> Sign In To Gmail To Continue</button>
-          </div>
+          </div> */}
           <div className='signin_btn'>
               <a href="https://master.d1l3klsse2xzei.amplifyapp.com/auth/google" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGoogle} size='lg' className='google-signin-icon'/> Sign In To Gmail To Continue</a>
           </div>
