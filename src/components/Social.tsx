@@ -9,6 +9,7 @@ const Social = () => {
     const getAndSetToken = async () => {
       if (token) {
         localStorage.setItem('signature', token);
+        console.log(localStorage.getItem('signature'))
         // await getUser();
         navigate('/dashboard');
       } else {

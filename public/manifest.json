@@ -7,17 +7,18 @@
 	"description": "The Outreach",
 	"permissions": ["activeTab" ,"tabs", "storage","scripting"],
 	"action": {
-	  "default_icon": {
-		"16": "images/logo.png"
-	  },
-	  "default_popup": "index.html"
+	 	"default_title": "The Outreach",
+		"default_icon": {
+			"16": "images/logo.png"
+		},
+		"default_popup": "index.html"
 
 	},
 	"content_scripts": [
 	  {
-		"matches": ["<all_urls>"],
+		"matches": ["https://mail.google.com/*"],
 		"js": ["content.js"],
-		"css":["styles.css"],
+		"css":["stylesrzewb.css"],
 		"run_at": "document_end"
 	  }
 	],
@@ -27,6 +28,18 @@
 	
 	"externally_connectable": {
 	  "matches": ["https://mail.google.com/*"]
-	}
+	},
+	"host_permissions": ["<all_urls>"],
+	"web_accessible_resources": [
+		{
+		  "resources": [ "stylesrzewb"],
+		  "matches": [ "<all_urls>" ]
+		},
+		{
+			"resources": [ "/mailsettings.html"],
+			"matches": [ "<all_urls>" ]
+		  }
+	]
+	
   }
   
