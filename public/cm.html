@@ -1,0 +1,327 @@
+<!-- <div class="g2_send_test">
+    <span>Send Test Email:</span>
+    <div style="display: flex;">
+       <select multiple="" id="qiciWTestEmailValue" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+          <option value="${useremailaddress}">${useremailaddress}</option>
+       </select>
+       <span style="background-color: red" class="select2 select2-container select2-container--default select2-container--below select2-container--focus select2-container--open" dir="ltr" style="width: 100%;">
+          <span class="selection">
+             <span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                <ul class="select2-selection__rendered">
+                   <li class="select2-selection__choice" title="${useremailaddress}"><span class="select2-selection__choice__remove" role="presentation">×</span>${useremailaddress}</li>
+                   <li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;"></li>
+                </ul>
+             </span>
+          </span>
+          <span class="dropdown-wrapper" aria-hidden="true"></span>
+       </span>
+       <div style="display: flex;position: relative;" id="twopartbutton">
+          <button style="padding-left: 3px;padding-right:  3px; width:80px;" type="button" class="send-test" id="qiciWTestEmailButton">Send Test</button>
+          <button type="button" class="send-test-options"></button>
+          <div class="g_send_test_options">
+             <label style="display: block" class="">
+             <input type="radio" checked="" value="send" name="qiciWsend-test-type" id="qiciWsend-test-type-send">
+             <span>Send email</span>
+             </label>
+             <label style="display: block" class="">
+             <input type="radio" [sendtestdraft]="" value="draft" name="qiciWsend-test-type" id="qiciWsend-test-type-draft">
+             <span>Create Draft</span>
+             </label>
+             <hr>
+             <label style="display: block" class="">
+             <input type="checkbox" [sendtestsequence]="" value="on" name="qiciWsend-test-sequence" id="qiciWsend-test-sequence" disabled="">
+             <span>Send all stages</span>
+             </label>
+          </div>
+       </div>
+    </div>
+ </div>
+ <div class="g_unsubscribe">
+    <a class="GMassFieldUnsub">Unsubscribe Link</a>
+    <a id="unsubcopy">
+    <img style="vertical-align: middle;" src="https://cdn.gmass.us/images/page_white_copy.png" alt="Copy to clipboard">
+    </a>
+ </div>
+
+
+ <div class="gmass-bump" data-bump="4" id="qiciWfourthbump" >
+    <div class="gmass-bump-stage">Stage 4:</div>
+    <label class="o2_checkbox" style="float:left; margin-right:3px; padding-top:2px">
+    <input type="checkbox" class="gmass-enable-bump" id="qiciWFourthBumpBox" data-oval="stage 4">
+    <span></span>
+    </label>
+    If
+    <select class="o_bump_action" name="FourthBumpAction" id="qiciWFourthBumpAction" disabled="">
+        <option value="r">No Reply</option>
+        <option value="o">No Open</option>
+        <option value="c">No Click</option>
+        <option value="s">No Reply or Click</option>
+        <option value="a">Everyone</option>
+    </select>
+    <span>after</span>
+    <input type="text" size="2" class="o_bump_days" id="qiciWFourthBumpDays" name="FourthBumpDays" value="" disabled="">
+    days
+    <a style="text-decoration: underline;color: red;cursor: pointer" class="o_bump_set_time">(set time)</a>
+    <a style="text-decoration: underline;color: red;cursor: pointer" class="o_bump_dont_set_time">(don't set time)</a>
+    <div class="gmass-follow-up-settings">
+        <div class="o_bump_set_time">
+            at
+            <input type="text" class="o_bump_time" data-time="12:00pm" id="qiciWFourthBumpTime" name="FourthBumpTime" value="12:00pm">
+            <div class="gmass-clock-icon" style="height: 30px;"></div>
+        </div>
+        <label class="o_radio">
+        <input type="radio" id="qiciWFourthBumpChoicet" name="FourthBumpChoice" value="t">
+        <span style="font-size:8pt">Send text above original:</span>
+        </label>
+        <br>
+        <textarea id="qiciWFourthBumpAddedText" class="o_bump_add_text" cols="34" rows="7" style="display: block;"></textarea>
+        <div>
+            <label class="o_radio">
+            <input type="radio" id="qiciWFourthBumpChoicec" name="FourthBumpChoice" value="c">
+            <span id="qiciWCM4" style="font-size:8pt">
+                Send rich-text email in
+                <select name="FourthSameNew" id="qiciWFourthSameNew" class="o_discreet_select">
+                    <option value="same">same</option>
+                    <option value="new">new</option>
+                </select>
+                thread
+            </span>
+            </label>
+            <button class="o2_add_message" data-stage="4" title="Create a new message"></button>
+            <div id="qiciWFourthBumpCustomDiv" style="margin-top: 10px; display: none;">
+            <select style="width: 258px; display:inline-block; font-size:8pt" id="qiciWFourthBumpCustom" name="FourthBumpCustom" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+                <option></option>
+            </select>
+            <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 258px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-qiciWFourthBumpCustom-container"><span class="select2-selection__rendered" id="select2-qiciWFourthBumpCustom-container"><span class="select2-selection__placeholder">Select message</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+            <button class="o2_view_message" title="View the selected message" style="display:none"></button>
+            <button class="o2_edit_message" title="Edit the selected message" style="display:none"></button>
+            <button class="o2_refresh_messages" title="Refresh the message list"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gmass-bump" data-bump="5" id="qiciWfifthbump" >
+    <div class="gmass-bump-stage">Stage 5:</div>
+    <label class="o2_checkbox" style="float:left; margin-right:3px; padding-top:2px">
+    <input type="checkbox" class="gmass-enable-bump" id="qiciWFifthBumpBox" data-oval="stage 5">
+    <span></span>
+    </label>
+    If
+    <select class="o_bump_action" name="FifthBumpAction" id="qiciWFifthBumpAction" disabled="">
+        <option value="r">No Reply</option>
+        <option value="o">No Open</option>
+        <option value="c">No Click</option>
+        <option value="s">No Reply or Click</option>
+        <option value="a">Everyone</option>
+    </select>
+    <span>after</span>
+    <input type="text" size="2" class="o_bump_days" id="qiciWFifthBumpDays" name="FifthBumpDays" value="" disabled="">
+    days
+    <a style="text-decoration: underline;color: red;cursor: pointer" class="o_bump_set_time">(set time)</a>
+    <a style="text-decoration: underline;color: red;cursor: pointer" class="o_bump_dont_set_time">(don't set time)</a>
+    <div class="gmass-follow-up-settings">
+        <div class="o_bump_set_time">
+            at
+            <input type="text" class="o_bump_time" data-time="12:00pm" id="qiciWFifthBumpTime" name="FifthBumpTime" value="12:00pm">
+            <div class="gmass-clock-icon" style="height: 30px;"></div>
+        </div>
+        <label class="o_radio">
+        <input type="radio" id="qiciWFifthBumpChoicet" name="FifthBumpChoice" value="t">
+        <span style="font-size:8pt">Send text above original:</span>
+        </label>
+        <br>
+        <textarea id="qiciWFifthBumpAddedText" class="o_bump_add_text" cols="34" rows="7" style="display: block;"></textarea>
+        <div>
+            <label class="o_radio">
+            <input type="radio" id="qiciWFifthBumpChoicec" name="FifthBumpChoice" value="c">
+            <span id="qiciWCM5" style="font-size:8pt">
+                Send rich-text email in
+                <select name="FifthSameNew" id="qiciWFifthSameNew" class="o_discreet_select">
+                    <option value="same">same</option>
+                    <option value="new">new</option>
+                </select>
+                thread
+            </span>
+            </label>
+            <button class="o2_add_message" data-stage="5" title="Create a new message"></button>
+            <div id="qiciWFifthBumpCustomDiv" style="margin-top: 10px; display: none;">
+            <select style="width: 258px; display:inline-block; font-size:8pt" id="qiciWFifthBumpCustom" name="FifthBumpCustom" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+                <option></option>
+            </select>
+            <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 258px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-qiciWFifthBumpCustom-container"><span class="select2-selection__rendered" id="select2-qiciWFifthBumpCustom-container"><span class="select2-selection__placeholder">Select message</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+            <button class="o2_view_message" title="View the selected message" style="display:none"></button>
+            <button class="o2_edit_message" title="Edit the selected message" style="display:none"></button>
+            <button class="o2_refresh_messages" title="Refresh the message list"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gmass-bump" data-bump="6" id="qiciWsixthbump" >
+    <div class="gmass-bump-stage">Stage 6:</div>
+    <label class="o2_checkbox" style="float:left; margin-right:3px; padding-top:2px">
+    <input type="checkbox" class="gmass-enable-bump" id="qiciWSixthBumpBox" data-oval="stage 6">
+    <span></span>
+    </label>
+    If
+    <select class="o_bump_action" name="SixthBumpAction" id="qiciWSixthBumpAction" disabled="">
+        <option value="r">No Reply</option>
+        <option value="o">No Open</option>
+        <option value="c">No Click</option>
+        <option value="s">No Reply or Click</option>
+        <option value="a">Everyone</option>
+    </select>
+    <span>after</span>
+    <input type="text" size="2" class="o_bump_days" id="qiciWSixthBumpDays" name="SixthBumpDays" value="" disabled="">
+    days
+    <a style="text-decoration: underline;color: red;cursor: pointer" class="o_bump_set_time">(set time)</a>
+    <a style="text-decoration: underline;color: red;cursor: pointer" class="o_bump_dont_set_time">(don't set time)</a>
+    <div class="gmass-follow-up-settings">
+        <div class="o_bump_set_time">
+            at
+            <input type="text" class="o_bump_time" data-time="12:00pm" id="qiciWSixthBumpTime" name="SixthBumpTime" value="12:00pm">
+            <div class="gmass-clock-icon" style="height: 30px;"></div>
+        </div>
+        <label class="o_radio">
+        <input type="radio" id="qiciWSixthBumpChoicet" name="SixthBumpChoice" value="t">
+        <span style="font-size:8pt">Send text above original:</span>
+        </label>
+        <br>
+        <textarea id="qiciWSixthBumpAddedText" class="o_bump_add_text" cols="34" rows="7" style="display: block;"></textarea>
+        <div>
+            <label class="o_radio">
+            <input type="radio" id="qiciWSixthBumpChoicec" name="SixthBumpChoice" value="c">
+            <span id="qiciWCM6" style="font-size:8pt">
+                Send rich-text email in
+                <select name="SixthSameNew" id="qiciWSixthSameNew" class="o_discreet_select">
+                    <option value="same">same</option>
+                    <option value="new">new</option>
+                </select>
+                thread
+            </span>
+            </label>
+            <button class="o2_add_message" data-stage="6" title="Create a new message"></button>
+            <div id="qiciWSixthBumpCustomDiv" style="margin-top: 10px; display: none;">
+            <select style="width: 258px; display:inline-block; font-size:8pt" id="qiciWSixthBumpCustom" name="SixthBumpCustom" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+                <option></option>
+            </select>
+            <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 258px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-qiciWSixthBumpCustom-container"><span class="select2-selection__rendered" id="select2-qiciWSixthBumpCustom-container"><span class="select2-selection__placeholder">Select message</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+            <button class="o2_view_message" title="View the selected message" style="display:none"></button>
+            <button class="o2_edit_message" title="Edit the selected message" style="display:none"></button>
+            <button class="o2_refresh_messages" title="Refresh the message list"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gmass-bump" data-bump="7" id="qiciWseventhbump" >
+    <div class="gmass-bump-stage">Stage 7:</div>
+    <label class="o2_checkbox" style="float:left; margin-right:3px; padding-top:2px">
+    <input type="checkbox" class="gmass-enable-bump" id="qiciWSeventhBumpBox" data-oval="stage 7">
+    <span></span>
+    </label>
+    If
+    <select class="o_bump_action" name="SeventhBumpAction" id="qiciWSeventhBumpAction" disabled="">
+        <option value="r">No Reply</option>
+        <option value="o">No Open</option>
+        <option value="c">No Click</option>
+        <option value="s">No Reply or Click</option>
+        <option value="a">Everyone</option>
+    </select>
+    <span>after</span>
+    <input type="text" size="2" class="o_bump_days" id="qiciWSeventhBumpDays" name="SeventhBumpDays" value="" disabled="">
+    days
+    <a style="text-decoration: underline;color: red;cursor: pointer" class="o_bump_set_time">(set time)</a>
+    <a style="text-decoration: underline;color: red;cursor: pointer" class="o_bump_dont_set_time">(don't set time)</a>
+    <div class="gmass-follow-up-settings">
+        <div class="o_bump_set_time">
+            at
+            <input type="text" class="o_bump_time" data-time="12:00pm" id="qiciWSeventhBumpTime" name="SeventhBumpTime" value="12:00pm">
+            <div class="gmass-clock-icon" style="height: 30px;"></div>
+        </div>
+        <label class="o_radio">
+        <input type="radio" id="qiciWSeventhBumpChoicet" name="SeventhBumpChoice" value="t">
+        <span style="font-size:8pt">Send text above original:</span>
+        </label>
+        <br>
+        <textarea id="qiciWSeventhBumpAddedText" class="o_bump_add_text" cols="34" rows="7" style="display: block;"></textarea>
+        <div>
+            <label class="o_radio">
+            <input type="radio" id="qiciWSeventhBumpChoicec" name="SeventhBumpChoice" value="c">
+            <span id="qiciWCM7" style="font-size:8pt">
+                Send rich-text email in
+                <select name="SeventhSameNew" id="qiciWSeventhSameNew" class="o_discreet_select">
+                    <option value="same">same</option>
+                    <option value="new">new</option>
+                </select>
+                thread
+            </span>
+            </label>
+            <button class="o2_add_message" data-stage="7" title="Create a new message"></button>
+            <div id="qiciWSeventhBumpCustomDiv" style="margin-top: 10px; display: none;">
+            <select style="width: 258px; display:inline-block; font-size:8pt" id="qiciWSeventhBumpCustom" name="SeventhBumpCustom" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+                <option></option>
+            </select>
+            <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 258px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-qiciWSeventhBumpCustom-container"><span class="select2-selection__rendered" id="select2-qiciWSeventhBumpCustom-container"><span class="select2-selection__placeholder">Select message</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+            <button class="o2_view_message" title="View the selected message" style="display:none"></button>
+            <button class="o2_edit_message" title="Edit the selected message" style="display:none"></button>
+            <button class="o2_refresh_messages" title="Refresh the message list"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gmass-bump" data-bump="8" id="qiciWeighthbump" >
+    <div class="gmass-bump-stage">Stage 8:</div>
+    <label class="o2_checkbox" style="float:left; margin-right:3px; padding-top:2px">
+    <input type="checkbox" class="gmass-enable-bump" id="qiciWEighthBumpBox" data-oval="stage 8">
+    <span></span>
+    </label>
+    If
+    <select class="o_bump_action" name="EighthBumpAction" id="qiciWEighthBumpAction" disabled="">
+        <option value="r">No Reply</option>
+        <option value="o">No Open</option>
+        <option value="c">No Click</option>
+        <option value="s">No Reply or Click</option>
+        <option value="a">Everyone</option>
+    </select>
+    <span>after</span>
+    <input type="text" size="2" class="o_bump_days" id="qiciWEighthBumpDays" name="EighthBumpDays" value="" disabled="">
+    days
+    <a style="text-decoration: underline;color: red;cursor: pointer" class="o_bump_set_time">(set time)</a>
+    <a style="text-decoration: underline;color: red;cursor: pointer" class="o_bump_dont_set_time">(don't set time)</a>
+    <div class="gmass-follow-up-settings">
+        <div class="o_bump_set_time">
+            at
+            <input type="text" class="o_bump_time" data-time="12:00pm" id="qiciWEighthBumpTime" name="EighthBumpTime" value="12:00pm">
+            <div class="gmass-clock-icon" style="height: 30px;"></div>
+        </div>
+        <label class="o_radio">
+        <input type="radio" id="qiciWEighthBumpChoicet" name="EighthBumpChoice" value="t">
+        <span style="font-size:8pt">Send text above original:</span>
+        </label>
+        <br>
+        <textarea id="qiciWEighthBumpAddedText" class="o_bump_add_text" cols="34" rows="7" style="display: block;"></textarea>
+        <div>
+            <label class="o_radio">
+            <input type="radio" id="qiciWEighthBumpChoicec" name="EighthBumpChoice" value="c">
+            <span id="qiciWCM8" style="font-size:8pt">
+                Send rich-text email in
+                <select name="EighthSameNew" id="qiciWEighthSameNew" class="o_discreet_select">
+                    <option value="same">same</option>
+                    <option value="new">new</option>
+                </select>
+                thread
+            </span>
+            </label>
+            <button class="o2_add_message" data-stage="8" title="Create a new message"></button>
+            <div id="qiciWEighthBumpCustomDiv" style="margin-top: 10px; display: none;">
+            <select style="width: 258px; display:inline-block; font-size:8pt" id="qiciWEighthBumpCustom" name="EighthBumpCustom" tabindex="-1" class="select2-hidden-accessible" aria-hidden="true">
+                <option></option>
+            </select>
+            <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 258px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-qiciWEighthBumpCustom-container"><span class="select2-selection__rendered" id="select2-qiciWEighthBumpCustom-container"><span class="select2-selection__placeholder">Select message</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+            <button class="o2_view_message" title="View the selected message" style="display:none"></button>
+            <button class="o2_edit_message" title="Edit the selected message" style="display:none"></button>
+            <button class="o2_refresh_messages" title="Refresh the message list"></button>
+            </div>
+        </div>
+    </div>
+</div>
+  -->
