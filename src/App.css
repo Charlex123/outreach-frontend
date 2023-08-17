@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 #root {
   min-height: 750px;height: 100%;
 }
@@ -8,6 +11,12 @@
 .signin_btn {
   width: auto;
   margin: 5rem auto !important;
+}
+.loginmain {
+  margin: 5rem auto;
+}
+.loginmain h1 {
+  margin-left: 2rem !important;
 }
 .signin_btn button {
   background-color: #3574fa;border: none;padding: 5px 5px 5px 5px;cursor: pointer;
@@ -24,7 +33,18 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.dash_main {
+  margin: 5rem auto;
+}
+.dash_main h1 {
+  font-family: "Poppins";
+}
+.dash_main h2 {
+  font-family: "Roboto";margin-top: 20px;
+}
+.dash_main p {
+  font-family: "Montserrat";margin: 10px auto;padding: 10px 20px 0 20px;line-height: 20px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
