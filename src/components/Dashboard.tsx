@@ -11,7 +11,8 @@ const Dashboard = () => {
 //    const [bulkRecipients, setBulkRecipients] = useState<string>("");
 //    const [recipientsInputType, seRecipientsInputType] = useState<string>("");
    const [userappkey, setAppKey] = useState<any>("");
-   const [userData, setUserData] = useState<any>("")
+   const [userData, setUserData] = useState<any>("");
+   const [userEmail, setUserEmail] = useState<any>("");
    
    useEffect(() => {
       setAppKey(localStorage.getItem("signature"));
@@ -26,22 +27,19 @@ const Dashboard = () => {
                userappkey
             }, config);
             localStorage.setItem("userData_", JSON.stringify(data))
-            console.log('u data',data)
+            setUserEmail(data.email);
             setUserData(localStorage.getItem("userData_"));
-            console.log(userData);
          } catch (error) {
             console.log(error)
          }
       }
       getUserdata();
-   }, [userappkey,userData])
+   }, [userappkey,userData,userEmail])
    
-   
-   console.log('userdata___',userData);
-   console.log('user email___',userData.email);
    return (
       <div className='dash_main'>
-         <h1>Hello, ${userData.email}, Welcome To Your Outreach Dashboard</h1>
+         <h1>Hello, {userEmail}</h1>
+         <h2>Welcome To Your Outreach Dashboard</h2>
          <div className='dashb_main'>
             <p>This is where all your email campaign details and records for tracking will be displayed</p>
             <p>Use the extension to interact with Gmail, send email campaigns and set your campaign schedules and others</p>
