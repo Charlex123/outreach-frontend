@@ -220,7 +220,7 @@ function handleArrorClick(event) {
                               </svg>
                            </div>
                            <div  title="Connect to an email list in a Google Sheet." class="s_icona" role="button" style="padding-right: 10px"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-spreadsheet" viewBox="0 0 16 16" id="IconChangeColor"> <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z" id="mainIconPathAttribute" fill="#f52424"></path> </svg></div>
-                           <div title="Launch the campaigns dashboard." role="button" class="s_icona" style="padding-right: 10px"><svg style="color: red" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-layout-text-window" viewBox="0 0 16 16"> <path d="M3 6.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" fill="red"></path> <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v1H1V2a1 1 0 0 1 1-1h12zm1 3v10a1 1 0 0 1-1 1h-2V4h3zm-4 0v11H2a1 1 0 0 1-1-1V4h10z" fill="red"></path> </svg></div>`;
+                           <div title="Launch the campaigns dashboard." role="button" class="s_icona dash_boda" style="padding-right: 10px"><svg class="dash_boda" id="dash_boda" style="color: red" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-layout-text-window" viewBox="0 0 16 16"> <path class="dash_boda" id="dash_boda1" d="M3 6.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" fill="red"></path> <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v1H1V2a1 1 0 0 1 1-1h12zm1 3v10a1 1 0 0 1-1 1h-2V4h3zm-4 0v11H2a1 1 0 0 1-1-1V4h10z" fill="red"></path> </svg></div>`;
    if(document.querySelectorAll(".icons_s").length > 0) {
 
    }else {
@@ -719,12 +719,10 @@ document.body.addEventListener('click',function (event){
             document.querySelector("#gsheetmodal_l_c").classList.add("d_none")
          }
       }
-      // if(event.target.className === "o_sheet_s" || event.target.className === "o_sheet_s_" || event.target.className === "gsheet_list_icon" || event.target.className === "email_recip_icon" ) {
-      //    console.log('entered-----')
-      //    gMod_overlay.classList.remove('d_none');
-      //    gMod_c.classList.remove('d_none');
-      //    openRecepientListModal();
-      // }
+      if(event.target.id === "dash_boda" || event.target.id === "dash_boda1" ) {
+         window.location.href = "http://localhost:3001/dashboard";
+      }
+
       if(event.target.className === "gsheet_mod"){
          if(event.target.parentElement !== undefined && event.target.parentElement !== null) {
             gMod_c.remove();

@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-import {HashRouter as Router,} from "react-router-dom";
 
 const Social = () => {
     const navigate = useNavigate();

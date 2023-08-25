@@ -53,6 +53,12 @@
   height: 40vmin;
   pointer-events: none;
 }
+.gmail_redirect {
+  margin: 2rem auto;font-family: "Poppins";
+}
+.gmail_redirect a {
+  font-size: 16px;font-weight: 600;color: red;
+}
 .dash_main {
   margin: 5rem auto;
 }
