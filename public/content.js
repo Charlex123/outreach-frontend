@@ -219,7 +219,6 @@ function handleArrorClick(event) {
                               </g>
                               </svg>
                            </div>
-                           <div  title="Connect to an email list in a Google Sheet." class="s_icona" role="button" style="padding-right: 10px"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-spreadsheet" viewBox="0 0 16 16" id="IconChangeColor"> <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z" id="mainIconPathAttribute" fill="#f52424"></path> </svg></div>
                            <div title="Launch the campaigns dashboard." role="button" class="s_icona dash_boda" style="padding-right: 10px"><svg class="dash_boda" id="dash_boda" style="color: red" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-layout-text-window" viewBox="0 0 16 16"> <path class="dash_boda" id="dash_boda1" d="M3 6.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" fill="red"></path> <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v1H1V2a1 1 0 0 1 1-1h12zm1 3v10a1 1 0 0 1-1 1h-2V4h3zm-4 0v11H2a1 1 0 0 1-1-1V4h10z" fill="red"></path> </svg></div>`;
    if(document.querySelectorAll(".icons_s").length > 0) {
 
@@ -243,7 +242,7 @@ function openRecepientListModal() {
                                           <span class="" role="heading">How do you want to add recipients?</span>
                                           <span class="close_modal_c" tabindex="0" role="button">X</span>
                                        </div>
-                                       <div class=""><div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1em;"><div class="pick-recipients-button pick-sheets" title="Connect to an email list in a Google Sheet."><img class="gsheet_mod" src="https://cdn.gmass.us/Extension2019Images/google_sheet_1.png"><span>From a Google Sheet</span></div><div class="pick-recipients-button pick-campaign" title="Connect to a previous campaign."><img src="https://cdn.gmass.us/Extension2019Images/campaign.png"><span>From another campaign</span></div><div class="pick-recipients-button pick-list" title="Select a list from your account."><img src="https://cdn.gmass.us/Extension2019Images/from_list2.png"><span>From a File/list</span></div></div></div>
+                                       <div class=""><div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1em;"><div class="pick-recipients-button pick-sheets" title="Connect to an email list in a Google Sheet."><img class="gsheet_mod" src="https://cdn.gmass.us/Extension2019Images/google_sheet_1.png"><span>From a Google Sheet</span></div><div class="pick-recipients-button pick-campaign loadfromanothercampaign" title="Connect to a previous campaign."><img class="loadfromanothercampaign" src="https://cdn.gmass.us/Extension2019Images/campaign.png"><span class="loadfromanothercampaign">From another campaign</span></div></div></div>
                                     </div>
                                  </div>`;
       for(let g = 0; g <= p_Div.length; g++) {
@@ -720,7 +719,7 @@ document.body.addEventListener('click',function (event){
          }
       }
       if(event.target.id === "dash_boda" || event.target.id === "dash_boda1" ) {
-         window.location.href = "http://localhost:3001/dashboard";
+         window.location.href = "https://theoutreach.co/dashboard";
       }
 
       if(event.target.className === "gsheet_mod"){
@@ -756,7 +755,7 @@ document.body.addEventListener('click',function (event){
          // let useremailaddress = checkuseremailaddress.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi)
       }
       if(event.target.className === "leftSide") {
-         loadingMessage("<span>Processing your request... please wait !!!</span>");
+         loadingMessage("<div>Processing your request... please wait !!!</div>");
          let emailsubject = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.lastElementChild.previousElementSibling.value;
          let emailbody = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.lastElementChild.firstElementChild.firstElementChild.firstElementChild.nextElementSibling.lastElementChild.firstElementChild.innerHTML;
          let emailrecipients = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.previousElementSibling.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.value;
@@ -777,7 +776,7 @@ document.body.addEventListener('click',function (event){
       }
 
       if(event.target.className === "send-test") {
-         loadingMessage("<span>Processing your request... please wait !!!</span>");
+         loadingMessage("<div>Processing your request... please wait !!!</div>");
          let emailbody = document.querySelectorAll(".Am.Al.editable.LW-avf.tS-tW")[0].innerHTML;
          let emailrecipients = document.querySelectorAll(".agP.aFw")[0].value;
          let emailsubject = document.getElementsByClassName("aoT")[0].value;
@@ -868,10 +867,14 @@ document.body.addEventListener('click',function (event){
          event.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.toggleAttribute('disabled');
       }
       
-      if(event.target.className !== "rightSide" && event.target.className !== "rightSide rotated" && event.target.className !== "svo_" && event.target.className !== "svo__") {
-         if(document.querySelectorAll(".outreachsdk__menu").length > 0) {
-            document.querySelector("#outreachsdk__menu").remove();
-         }
+      // if(event.target.className !== "rightSide" && event.target.className !== "rightSide rotated" && event.target.className !== "svo_" && event.target.className !== "svo__") {
+      //    if(document.querySelectorAll(".outreachsdk__menu").length > 0) {
+      //       document.querySelector("#outreachsdk__menu").remove();
+      //    }
+      // }
+
+      if(event.target.className === "loadfromanothercampaign") {
+         loadingMessage("<div>Loading please wait</div>");
       }
 })
 
@@ -889,7 +892,7 @@ async function sendmailcampaignMessage() {
    //    return result.mailrecipients;
    // });
 
-   let emailrecipients = "juanromeroj@gmail.com,johnwyatt1602gmail.com";
+   let emailrecipients = "juanromeroj1962@gmail.com,johnwyatt160gmail.com";
 
    console.log('email body',emailbody + 'email subject',emailsubject + 'email recipients', emailrecipients)
    let emailsubject_,emailbody_,emailrecipients_;

@@ -5,7 +5,7 @@ import DataProvider from './context/authcontext';
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/styles/Global";
-import { Route, HashRouter as Router, Routes } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Social from "./components/Social";
 import Dashboard from "./components/Dashboard";
 import Login from './components/Login';

@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
       // Create a new tab and store its ID:: chrome.runtime.getURL("index.html")
       try {
         console.log('message detail',message.details);
-        const response = await fetch("http://localhost:3000/user/verifyuser", {
+        const response = await fetch("https://theoutreach.onrender.com/user/verifyuser", {
               method: "POST",
               body: JSON.stringify({'email':message.details}),
               headers: {
@@ -44,7 +44,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
       // Create a new tab and store its ID:: chrome.runtime.getURL("index.html")
       try {
         console.log('message detail',message.details);
-        const response = await fetch("http://localhost:3000/campaigns/checkfirstmailcampaign", {
+        const response = await fetch("https://theoutreach.onrender.com/campaigns/checkfirstmailcampaign", {
               method: "POST",
               body: JSON.stringify({'email':message.details}),
               headers: {
@@ -77,7 +77,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
         // Create a new tab and store its ID:: chrome.runtime.getURL("index.html")
         try {
             console.log(message.details)
-            const response = await fetch("http://localhost:3000/campaigns/sendemailcampaign", {
+            const response = await fetch("https://theoutreach.onrender.com/campaigns/sendemailcampaign", {
               method: "POST",
               body: JSON.stringify(message.details),
               headers: {
