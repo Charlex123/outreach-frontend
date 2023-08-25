@@ -1,6 +1,7 @@
 import React from 'react'
 // import { Container } from '../App'
 // import { OutreachButton } from './styles/ButtonVariants.styled'
+import {HashRouter as Router,} from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
