@@ -11,7 +11,7 @@ setInterval(injectLunchBtn, 6000);
 async function injectLunchBtn() {
     try {
       sendfirstmailDarft();
-      // uploadrecipientsList();
+      uploadrecipientsList();
       openRecepientListModal();
       loadIcons();
 
@@ -156,8 +156,8 @@ function handleArrorClick(event) {
             cursor: pointer;
          fill: gray;
          }</style>
-         <g transform="translate(0.000000,103.000000) scale(0.100000,-0.100000)" stroke="none" class="o_sheet_s">
-         <path class="o_sheet_s" d="M159 1016 c-57 -20 -97 -53 -126 -104 l-28 -47 0 -350 c0 -339 1
+         <g transform="translate(0.000000,103.000000) scale(0.100000,-0.100000)" stroke="none">
+         <path d="M159 1016 c-57 -20 -97 -53 -126 -104 l-28 -47 0 -350 c0 -339 1
          -351 22 -390 24 -46 54 -75 103 -101 32 -17 66 -19 365 -22 240 -2 342 0 374
          9 59 17 135 90 150 144 14 51 15 666 1 715 -13 47 -63 106 -113 133 -41 21
          -52 22 -377 24 -257 2 -343 0 -371 -11z m438 -208 c70 -69 81 -103 37 -114
@@ -205,8 +205,8 @@ function handleArrorClick(event) {
                                  cursor: pointer;
                               fill: gray;
                               }</style>
-                              <g class="o_sheet_s_" transform="translate(0.000000,103.000000) scale(0.100000,-0.100000)" stroke="none" fill="red">
-                              <path class="o_sheet_s_" d="M159 1016 c-57 -20 -97 -53 -126 -104 l-28 -47 0 -350 c0 -339 1
+                              <g transform="translate(0.000000,103.000000) scale(0.100000,-0.100000)" stroke="none" fill="red">
+                              <path d="M159 1016 c-57 -20 -97 -53 -126 -104 l-28 -47 0 -350 c0 -339 1
                               -351 22 -390 24 -46 54 -75 103 -101 32 -17 66 -19 365 -22 240 -2 342 0 374
                               9 59 17 135 90 150 144 14 51 15 666 1 715 -13 47 -63 106 -113 133 -41 21
                               -52 22 -377 24 -257 2 -343 0 -371 -11z m438 -208 c70 -69 81 -103 37 -114
@@ -279,7 +279,9 @@ function openRecepientListModal() {
                <div id="sheetsselectparent" class="gsheet-drpdwn">
                   <select id="selectsheets" style="width: 550px;" class="gsheet-sample-drpdwn">
                      <option value="">Select Sample GSheet</option>
-                     <option value="17RrD0uhvux2_AZXMXpQBlzMiKNmsBKEjZpMOKUN7KJ4" updatedtime="1/1/2015">Outreach Sample Sheet</option>
+                     <option value="1vsyEe40fGpRK7tMYFkSLME_zW6Y1T8wIucdzoshaOv8" updatedtime="2/20/2021">Masterclass Course Schedule</option>
+                     <option value="1ujnCLSxq7jRHuyIHhCUhuJtSyQamuh2pTYcLICuWRKQ" updatedtime="1/26/2021">BSC docs and tutorials for developers</option>
+                     <option value="1vhtTjvW-gTqnzzqHhRN9r3qWMm1qQMfmmLHKcOpt774" updatedtime="1/1/2015">Outreach Sample Sheet</option>
                   </select>
                </div>
                <input placeholder="Your-Spreadsheet-ID" id="inputsheets" style="height: 45px; width: 550px;">
@@ -371,11 +373,11 @@ async function injectIfram() {
                                                       <div class="o_show_on_collapse"><span class="o_oval">opens</span><span class="o_oval">clicks</span></div>
                                                       <div class="o_hide_on_collapse">
                                                          <label class="o2_checkbox">
-                                                         <input type="checkbox" name="OpenTracking" id="outROpenTracking" checked value="true" data-oval="opens">
+                                                         <input type="checkbox" name="OpenTracking" id="outROpenTracking" checked="" data-oval="opens">
                                                          <span>Opens</span>
                                                          </label>
                                                          <label class="o2_checkbox">
-                                                         <input type="checkbox" name="ClickTracking" id="outRClickTracking" checked value="true" data-oval="clicks">
+                                                         <input type="checkbox" name="ClickTracking" id="outRClickTracking" checked="" data-oval="clicks">
                                                          <span>Clicks</span>
                                                          </label>
                                                       </div>
@@ -560,7 +562,7 @@ async function injectIfram() {
                                                                </div>
                                                                <div style="margin-top: 5px" id="outRSkipWeekendsDiv" class="not-inline-reply-form">
                                                                   <label class="o2_checkbox">
-                                                                  <input type="checkbox" name="SkipWeekends" id="outRSkipWeekends" [skipweekendson] value="true" data-oval="skip weekends">
+                                                                  <input type="checkbox" name="SkipWeekends" id="outRSkipWeekends" [skipweekendson]="" data-oval="skip weekends">
                                                                   <span>Skip weekends</span>
                                                                   </label>
                                                                </div>
@@ -719,12 +721,10 @@ document.body.addEventListener('click',function (event){
             document.querySelector("#gsheetmodal_l_c").classList.add("d_none")
          }
       }
-      // if(event.target.className === "o_sheet_s" || event.target.className === "o_sheet_s_" || event.target.className === "gsheet_list_icon" || event.target.className === "email_recip_icon" ) {
-      //    console.log('entered-----')
-      //    gMod_overlay.classList.remove('d_none');
-      //    gMod_c.classList.remove('d_none');
-      //    openRecepientListModal();
-      // }
+      if(event.target.className === "o_sheet_s" || event.target.className === "gsheet_list_icon") {
+         gMod_overlay.classList.remove('d_none');
+         gMod_c.classList.remove('d_none');
+      }
       if(event.target.className === "gsheet_mod"){
          if(event.target.parentElement !== undefined && event.target.parentElement !== null) {
             gMod_c.remove();
@@ -772,7 +772,7 @@ document.body.addEventListener('click',function (event){
          });
 
          chrome.storage.local.set({ mailrecipients: emailrecipients }).then(() => {
-            console.log("mail recipients is set",emailrecipients);
+            // console.log("mail recipients is set");
          });
          
          sendmailCampaign()
@@ -853,8 +853,8 @@ document.body.addEventListener('click',function (event){
       }
       if(event.target.className === "outreach-enable-bump") {
          event.target.parentElement.parentElement.classList.toggle('enabled');
-         event.target.parentElement.nextElementSibling.toggleAttribute("disabled")
-         event.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.toggleAttribute("disabled")
+         event.target.parentElement.nextElementSibling.removeAttribute("disabled")
+         event.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.removeAttribute("disabled")
       }
       if(event.target.className === "o_bump_set_time time_setter_d") {
          event.target.parentElement.classList.toggle('set-time');
@@ -863,22 +863,17 @@ document.body.addEventListener('click',function (event){
          event.target.parentElement.classList.toggle('set-time');
       }
       if(event.target.id === "outRDelayCheckbox"){
-         event.target.nextElementSibling.firstElementChild.toggleAttribute('disabled');
+         event.target.nextElementSibling.firstElementChild.removeAttribute('disabled');
       }
       if(event.target.id === "outRRecur"){
-         event.target.parentElement.nextElementSibling.nextElementSibling.toggleAttribute('disabled');
-         event.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.toggleAttribute('disabled');
+         event.target.parentElement.nextElementSibling.nextElementSibling.removeAttribute('disabled');
+         event.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.removeAttribute('disabled');
       }
       
-      if(event.target.className !== "rightSide" && event.target.className !== "rightSide rotated" && event.target.className !== "svo_" && event.target.className !== "svo__") {
-         if(document.querySelectorAll(".outreachsdk__menu").length > 0) {
-            document.querySelector("#outreachsdk__menu").remove();
-         }
-      }
+      
 })
 
 async function sendmailcampaignMessage() {
-   console.log('bro  --------')
    let emailsubject = await chrome.storage.local.get(["mailsubj"]).then((result) => {
       return result.mailsubj;
    });
@@ -887,11 +882,10 @@ async function sendmailcampaignMessage() {
       return result.mailbody;
    });
 
-   // let emailrecipients = await chrome.storage.local.get(["mailrecipients"]).then((result) => {
-   //    return result.mailrecipients;
-   // });
+   let emailrecipients = await chrome.storage.local.get(["mailrecipients"]).then((result) => {
+      return result.mailrecipients;
+   });
 
-   let emailrecipients = "juanromeroj@gmail.com,johnwyatt1602gmail.com";
 
    console.log('email body',emailbody + 'email subject',emailsubject + 'email recipients', emailrecipients)
    let emailsubject_,emailbody_,emailrecipients_;
@@ -948,7 +942,7 @@ async function sendmailcampaignMessage() {
       if(document.querySelector("#outRFirstBumpBox").checked) {
          followupreplyaction1 = document.querySelector("#outRFirstBumpBox").parentElement.nextElementSibling.value;
          followupreplyday1 = document.querySelector("#outRFirstBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.value;
-         followupreplytime1 = document.querySelector("#outRFirstBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild.value;
+         followupreplytime1 = document.querySelector("#outRFirstBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild;
          followupreplymessage1 = document.querySelector("#outRFirstBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.lastElementChild.value;
 
          if(followupreplytime1) {
@@ -981,7 +975,7 @@ async function sendmailcampaignMessage() {
       if(document.querySelector("#outRSecondBumpBox").checked) {
          followupreplyaction2 = document.querySelector("#outRSecondBumpBox").parentElement.nextElementSibling.value;
          followupreplyday2 = document.querySelector("#outRSecondBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.value;
-         followupreplytime2 = document.querySelector("#outRSecondBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild.value;
+         followupreplytime2 = document.querySelector("#outRSecondBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild;
          followupreplymessage2 = document.querySelector("#outRSecondBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.lastElementChild.value;
 
          if(followupreplytime2) {
@@ -1014,7 +1008,7 @@ async function sendmailcampaignMessage() {
       if(document.querySelector("#outRThirdBumpBox").checked) {
          followupreplyaction3 = document.querySelector("#outRThirdBumpBox").parentElement.nextElementSibling.value;
          followupreplyday3 = document.querySelector("#outRThirdBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.value;
-         followupreplytime3 = document.querySelector("#outRThirdBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild.value;
+         followupreplytime3 = document.querySelector("#outRThirdBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild;
          followupreplymessage3 = document.querySelector("#outRThirdBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.lastElementChild.value;
 
          if(followupreplytime3) {
@@ -1054,7 +1048,7 @@ async function sendmailcampaignMessage() {
    if(document.querySelector("#outRSkipWeekends")) {
       if(document.querySelector("#outRSkipWeekends").checked) {
          console.log('skipweekends checked',document.querySelector("#outRSkipWeekends").value);
-         skipweekends = true;
+         skipweekends = document.querySelector("#outRSkipWeekends").value;
       }else {
          skipweekends = "";
       }
@@ -1116,17 +1110,8 @@ async function sendmailcampaignMessage() {
       verifyemails = "";
    }
 
-   let checkuseremailaddress = document.title;
-   let useremailaddress = checkuseremailaddress.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi)
-   
-   let userdetails = await chrome.storage.local.get(["userdetaila"]).then((result) => {
-      return result.userdetaila;
-   });
-let accesstoken = userdetails.accessToken;
-let refreshtoken = userdetails.refreshToken;
-
    let maildetails = {
-      "accessToken":accesstoken,"refreshToken":refreshtoken,"useremail":useremailaddress[0],"mailcampaignsubject" : emailsubject,"mailcampaignbody" : emailbody,"mailcampaignrecipents" : emailrecipients,"mailsendtesttype" : sendemailtesttype,"trackbyopen" : trackmailbyopen,"trackbyclicks" : trackmailbyclick,"followupreply1type" : followupreplyaction1,"followupreply1interval" : followupreplyday1,"followupreply1time" : followupreplytime1,"followupreply1message" : followupreplymessage1,"followupreply2type" : followupreplyaction2,"followupreply2interval" : followupreplyday2,"followupreply2time" : followupreplytime2,"followupreply2message" : followupreplymessage2,"followupreply3type" : followupreplyaction3,"followupreply3interval" : followupreplyday3,"followupreply3time" : followupreplytime3,"followupreply3message" : followupreplymessage3,"scheduletime":scheduletime,"skipweekends":skipweekends,"mailsperday":maxdailymailsend,"senddelayinterval":senddelayinterval,"repeatTimes":repeatTimes,"repeatinterval":repeatinterval,"sendas":newreplyradio,"verifyemails":verifyemails
+      "mailcampaignsubject" : emailsubject,"mailcampaignbody" : emailbody,"mailcampaignrecipents" : emailrecipients,"mailsendtesttype" : sendemailtesttype,"trackbyopen" : trackmailbyopen,"trackbyclicks" : trackmailbyclick,"followupreplyaction1" : followupreplyaction1,"followupreplyday1" : followupreplyday1,"followupreplytime1" : followupreplytime1,"followupreplymessage1" : followupreplymessage1,"followupreplytime_1" : followupreplytime_1,"followupreplyaction2" : followupreplyaction2,"followupreplyday2" : followupreplyday2,"followupreplytime2" : followupreplytime2,"followupreplymessage2" : followupreplymessage2,"followupreplytime_2" : followupreplytime_2,"followupreplyaction3" : followupreplyaction3,"followupreplyday3" : followupreplyday3,"followupreplytime3" : followupreplytime3,"followupreplymessage3" : followupreplymessage3,"followupreplytime_3" : followupreplytime_3,"scheduletime":scheduletime,"skipweekends":skipweekends,"maxdailymailsend":maxdailymailsend,"senddelayinterval":senddelayinterval,"repeatTimes":repeatTimes,"repeatinterval":repeatinterval,"newreplyradio":newreplyradio,"verifyemails":verifyemails
   }
    chrome.runtime.sendMessage({ action: "sendmailcampaign", details: maildetails });
 }
@@ -1135,9 +1120,6 @@ let refreshtoken = userdetails.refreshToken;
    if(message.action === "userauthenticationSuccess") {
       console.log('user auth success triggered')
       console.log('u data auth email', message.data.email)
-      chrome.storage.local.set({ userdetaila: message.data }).then(() => {
-         // console.log("mail subject is set");
-      });
       chrome.runtime.sendMessage({ action: "checkforfirstemailcampaign", details: message.data.email });
    }
    
@@ -1154,6 +1136,6 @@ let refreshtoken = userdetails.refreshToken;
    if(message.action === "firstemailcampaignfalse") {
       console.log('first mail false');
       console.log('send mail triggered');
-      sendmailcampaignMessage();
+      chrome.runtime.sendMessage({ action: "sendmailcampaign", details: message.data.email });
    }
 })

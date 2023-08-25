@@ -40,6 +40,7 @@ const Dashboard = () => {
       <div className='dash_main'>
          <h1>Hello, {userEmail}</h1>
          <h2>Welcome To Your Outreach Dashboard</h2>
+         <div className='gmail_redirect'><a href="https://mail.google.com/mail/u/0" rel='noopener no-referrer'>Go To Your GMail Inbox</a></div>
          <div className='dashb_main'>
             <p>This is where all your email campaign details and records for tracking will be displayed</p>
             <p>Use the extension to interact with Gmail, send email campaigns and set your campaign schedules and others</p>

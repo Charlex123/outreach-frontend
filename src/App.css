@@ -3,31 +3,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 #root {
-  min-height: 750px;height: 100%;
+  height: 100%;
 }
 .App {
-  text-align: center;min-width: 450px;width: 100%;min-height: 750px;height: 100%;
+  text-align: center;min-width: 450px;width: 100%;height: 100%;
 }
 .signin_btn {
   width: auto;
-  margin: 5rem auto !important;
+  margin: 4rem auto 2rem auto !important;
 }
 .loginmain {
-  margin: 5rem auto;
+  margin: 0 auto 0 auto;padding: 30px 10px 10px 10px;position: relative;overflow-y: hidden;
 }
 .loginmain h1 {
   margin-left: 2rem !important;
 }
+.loginmain h4 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-top: 2rem;color: #752525;
+}
+.loginmain ul {
+  margin: 2rem 0;
+}
+.loginmain ul li {
+  margin: .8rem 0;text-align: left;font-family: "Montserrat";color: #14161b;font-weight: 600;
+  list-style: none;font-size: 18px;
+}
+.loginmain ul li .fa-check-circ {
+  color: red;
+}
+.overlay_d {
+  position: absolute;background-image: url("assets/images/emailbg.jpg");background-position: center;background-size: cover;top: 0;bottom: 0;left: 0;right: 0;opacity: .1;z-index: 1;
+}
+.c_content {
+  z-index: 9;margin: auto;position: relative;padding: 20px;
+}
 .signin_btn button {
-  background-color: #3574fa;border: none;padding: 5px 5px 5px 5px;cursor: pointer;
+  background-color: #fa3535;border: none;padding: 5px 5px 5px 5px;cursor: pointer;
   color: white;font-weight: 600;font-family: "Poppins";font-size: 14px;border-radius: 4px;
 }
 .signin_btn a {
-  background-color: #3574fa;border: none;padding: 5px 5px 5px 5px;cursor: pointer;
+  background-color: #fa3535;border: none;padding: 5px 5px 5px 5px;cursor: pointer;
   color: white;font-weight: 600;font-family: "Poppins";font-size: 14px;border-radius: 4px;
 }
 .google-signin-icon {
-  color: rgb(241, 31, 31);padding-right: 5px;
+  color: rgb(11, 105, 212);padding-right: 5px;
 }
 .App-logo {
   height: 40vmin;
@@ -36,11 +56,14 @@
 .dash_main {
   margin: 5rem auto;
 }
-.dash_main h1 {
+.dash_main h1,.loginmain h1 {
   font-family: "Poppins";
 }
-.dash_main h2 {
+.dash_main h2, .loginmain h2 {
   font-family: "Roboto";margin-top: 20px;
+}
+.loginmain h2 {
+  text-transform: capitalize;
 }
 .dash_main p {
   font-family: "Montserrat";margin: 10px auto;padding: 10px 20px 0 20px;line-height: 20px;
@@ -50,7 +73,11 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+@media (max-width: 991) {
+  .c_content {
+    width: 100%;
+  }
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
