@@ -36,7 +36,7 @@
   position: absolute;background-image: url("assets/images/emailbg.jpg");background-position: center;background-size: cover;top: 0;bottom: 0;left: 0;right: 0;opacity: .1;z-index: 1;
 }
 .c_content {
-  z-index: 9;margin: auto;position: relative;padding: 20px;width: 60%;
+  z-index: 9;margin: auto;position: relative;padding: 20px;
 }
 .signin_btn button {
   background-color: #fa3535;border: none;padding: 5px 5px 5px 5px;cursor: pointer;
