@@ -1,6 +1,13 @@
 /*global chrome*/
-console.log('background.js')
-
+chrome.runtime.onInstalled.addListener(function() {
+  //alert('You just made the best decision of today, by installing GMass!\n\nWe will now redirect you to your Gmail account so you can get started sending email campaigns inside Gmail.');
+//window.open("https://mail.google.com");
+chrome.tabs.create({
+              // TODO(brad): Handle inbox?
+              url: 'https://mail.google.com/',
+              active: true
+  });
+});
 
 chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
 
@@ -8,7 +15,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
       // Create a new tab and store its ID:: chrome.runtime.getURL("index.html")
       try {
         console.log('message detail',message.details);
-        const response = await fetch("https://theoutreachapp.onrender.com/user/verifyuser", {
+        const response = await fetch("http://localhost:3000/user/verifyuser", {
               method: "POST",
               body: JSON.stringify({'email':message.details}),
               headers: {
@@ -16,10 +23,14 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
                 'Content-Type': 'application/json',
               },
             });
+            console.log('verify user ',response)
             if (response.ok) {
               const responseData = await response.json();
               // sendResponse(sender.tab.id, { action: "draftCreated", data: responseData });
-              console.log('uemail', responseData.email)
+             
+              chrome.storage.local.set({ userdetaila: responseData }).then(() => {
+                // console.log("userdetailia is set");
+             });
               if(responseData.email === message.details) {
                 sendResponse(sender.tab.id, { action: "userauthenticationSuccess", data: responseData });
                 chrome.tabs.sendMessage(sender.tab.id, { action: "userauthenticationSuccess", data: responseData });
@@ -30,16 +41,27 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
               
             } else {
               console.error("Error authenticating user:", response.status);
-              sendResponse(sender.tab.id, { action: "userauthenticationfailure" });
+              chrome.tabs.create({
+                // TODO(brad): Handle inbox?
+                url: 'http://localhost:3000/auth/google',
+                active: true
+              });
             }
       } catch(error){
+          chrome.tabs.create({
+            // TODO(brad): Handle inbox?
+            url: 'http://localhost:3000/auth/google',
+            active: true
+          });
           console.log('authentication error message',error.message)
       }
-    }else if (message.action === "checkforfirstemailcampaign") {
+    }
+    
+    if (message.action === "checkforfirstemailcampaign") {
       // Create a new tab and store its ID:: chrome.runtime.getURL("index.html")
       try {
         console.log('message detail',message.details);
-        const response = await fetch("https://theoutreachapp.onrender.com/campaigns/checkfirstmailcampaign", {
+        const response = await fetch("http://localhost:3000/campaigns/checkfirstmailcampaign", {
               method: "POST",
               body: JSON.stringify({'email':message.details}),
               headers: {
@@ -66,78 +88,46 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
       } catch(error){
           console.log('authentication error message',error.message)
       }
-    }else if (message.action === "sendemailcampaign") {
+    }
+    
+    if (message.action === "sendmailcampaign") {
         // Create a new tab and store its ID:: chrome.runtime.getURL("index.html")
         try {
-            const response = await fetch("https://theoutreachapp.onrender.com/label/create", {
+            console.log(message.details)
+            const response = await fetch("http://localhost:3000/campaigns/sendemailcampaign", {
               method: "POST",
               body: JSON.stringify(message.details),
               headers: {
-                "Content-Type": "application/json",
-                withCredentials: true,
-                authorization: `Bearer ${message.details.authUser}`
+                "Content-Type": "application/json"
               },
             });
         
             if (response.ok) {
               const responseData = await response.json();
-              console.log("Draft created:", responseData);
-              sendResponse(sender.tab.id, { action: "draftCreated", data: responseData });
-              chrome.tabs.sendMessage(sender.tab.id, { action: "draftCreated", data: responseData });
+              console.log("Email campaign created:", responseData);
+              // sendResponse(sender.tab.id, { action: "draftCreated", data: responseData });
+              // chrome.tabs.sendMessage(sender.tab.id, { action: "draftCreated", data: responseData });
             } else {
               console.error("Error creating draft:", response.status);
-              sendResponse(sender.tab.id, { action: "draftCreationError" });
+              // sendResponse(sender.tab.id, { action: "draftCreationError" });
             }
           } catch (error) {
             console.error("Error creating draft:", error.message);
             sendResponse(sender.tab.id, { action: "draftCreationError" });
           }
-    }else if (message.action === "createCampaignDraft"){
-    //   //send campaign to the server
-    //   const response = await fetch("https://theoutreachapp.onrender.com/label/create",{
-    //     method:"POST",
-    //     body:JSON.stringify(message.details),
-    //     headers:{
-    //       "Content-Type":"application/json",
-    //       withCredentials: true, 
-    //       "authorization":`Bearer ${message.details.authUser}`
-    //     },
-    //   })
-    //   console.log(JSON.stringify(response.body))
-    //   // console.log("creating draft",message.details)
-    //   // console.log("creating draft")
-    //   //send message to content screipt with draft data
-    //   // sendResponse("draft created":)
-    //   sendResponse(sender.tab.id, { action: "draftCreated",data:JSON.stringify(response.json()) });
-    // }
-  
-  
-  
-  
-    try {
-      const response = await fetch("https://theoutreachapp.onrender.com/label/create", {
-        method: "POST",
-        body: JSON.stringify(message.details),
-        headers: {
-          "Content-Type": "application/json",
-          withCredentials: true,
-          authorization: `Bearer ${message.details.authUser}`
-        },
-      });
-  
-      if (response.ok) {
-        const responseData = await response.json();
-        console.log("Draft created:", responseData);
-        sendResponse(sender.tab.id, { action: "draftCreated", data: responseData });
-        chrome.tabs.sendMessage(sender.tab.id, { action: "draftCreated", data: responseData });
-      } else {
-        console.error("Error creating draft:", response.status);
-        sendResponse(sender.tab.id, { action: "draftCreationError" });
-      }
-    } catch (error) {
-      console.error("Error creating draft:", error.message);
-      sendResponse(sender.tab.id, { action: "draftCreationError" });
-    }
     }
   });
   
+//   chrome.runtime.onInstalled.addListener(function() {
+//     //alert('You just made the best decision of today, by installing GMass!\n\nWe will now redirect you to your Gmail account so you can get started sending email campaigns inside Gmail.');
+// 	//window.open("https://mail.google.com");
+// 	chrome.tabs.create({
+//                 // TODO(brad): Handle inbox?
+//                 url: 'https://mail.google.com',
+//                 active: true
+//     });
+// });
+
+if (chrome.runtime.setUninstallURL) {
+    chrome.runtime.setUninstallURL('https://forms.gle/qJapwFkCFjrmNbK39');
+}

@@ -34,6 +34,10 @@ body {
 .icons_s {
 	margin: 9px auto 2px auto;
 }
+.closediv {
+	position: absolute;width: max-content;height: max-content;padding: 2px 5px 2px 5px;cursor: pointer;
+	left: -3%;right: 100%;font-size: 20px;font-weight: 600;color: #424141;background-color: #f8f1f1 !important;z-index: 99999;
+}
 .btnContainer {
     background-color: rgb(245, 57, 63) !important;
     border-radius: 120px !important;

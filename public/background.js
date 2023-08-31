@@ -15,7 +15,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
       // Create a new tab and store its ID:: chrome.runtime.getURL("index.html")
       try {
         console.log('message detail',message.details);
-        const response = await fetch("https://theoutreachapp.onrender.com/user/verifyuser", {
+        const response = await fetch("http://localhost:3000/user/verifyuser", {
               method: "POST",
               body: JSON.stringify({'email':message.details}),
               headers: {
@@ -41,9 +41,18 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
               
             } else {
               console.error("Error authenticating user:", response.status);
-              sendResponse(sender.tab.id, { action: "userauthenticationfailure" });
+              chrome.tabs.create({
+                // TODO(brad): Handle inbox?
+                url: 'http://localhost:3000/auth/google',
+                active: true
+              });
             }
       } catch(error){
+          chrome.tabs.create({
+            // TODO(brad): Handle inbox?
+            url: 'http://localhost:3000/auth/google',
+            active: true
+          });
           console.log('authentication error message',error.message)
       }
     }
@@ -52,7 +61,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
       // Create a new tab and store its ID:: chrome.runtime.getURL("index.html")
       try {
         console.log('message detail',message.details);
-        const response = await fetch("https://theoutreachapp.onrender.com/campaigns/checkfirstmailcampaign", {
+        const response = await fetch("http://localhost:3000/campaigns/checkfirstmailcampaign", {
               method: "POST",
               body: JSON.stringify({'email':message.details}),
               headers: {
@@ -85,7 +94,7 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
         // Create a new tab and store its ID:: chrome.runtime.getURL("index.html")
         try {
             console.log(message.details)
-            const response = await fetch("https://theoutreachapp.onrender.com/campaigns/sendemailcampaign", {
+            const response = await fetch("http://localhost:3000/campaigns/sendemailcampaign", {
               method: "POST",
               body: JSON.stringify(message.details),
               headers: {
@@ -109,6 +118,16 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     }
   });
   
+//   chrome.runtime.onInstalled.addListener(function() {
+//     //alert('You just made the best decision of today, by installing GMass!\n\nWe will now redirect you to your Gmail account so you can get started sending email campaigns inside Gmail.');
+// 	//window.open("https://mail.google.com");
+// 	chrome.tabs.create({
+//                 // TODO(brad): Handle inbox?
+//                 url: 'https://mail.google.com',
+//                 active: true
+//     });
+// });
+
 if (chrome.runtime.setUninstallURL) {
     chrome.runtime.setUninstallURL('https://forms.gle/qJapwFkCFjrmNbK39');
 }

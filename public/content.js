@@ -1,11 +1,5 @@
 /*global chrome*/
-// chrome.storage.local.set({ name: 'Charleyo' }).then(() => {
-//    console.log("Value is set");
-//  });
- 
-//  chrome.storage.local.get(["name"]).then((result) => {
-//    console.log("Value currently is " + result.name);
-//  });
+
 setInterval(injectLunchBtn, 6000);
 
 async function injectLunchBtn() {
@@ -61,30 +55,26 @@ async function injectLunchBtn() {
 
  async function sendfirstmailDarft() {
    try {
-        let mailTitle = document?.getElementsByClassName("aYF");
-        let messagesubject = document?.getElementsByClassName("aoT");
+        let mailTitle = document.querySelectorAll(".aYF")[0];
+        let messagesubject = document.querySelectorAll(".aoT")[0];
 
-        for(let f = 0; f <= mailTitle.length; f++) {
-            if(mailTitle[f] !== undefined && mailTitle[f] !== null) {
-               mailTitle[f].innerHTML = '<span>My First Outreach Email Campaign - Outreach </span>';
-            }else {
+        if(mailTitle !== undefined && mailTitle !== null) {
+               mailTitle.innerHTML = '<span>My First Outreach Email Campaign - Outreach </span>';
+         }else {
 
-            }
-        }
-
-        for(let s =0; s <= messagesubject.length; s++) {
-         if(messagesubject[s] !== undefined && messagesubject[s] !== null) {
-               messagesubject[s].value = "My First Outreach Email Campaign";
-               // messagesubject[s].setAttribute("value","My First Outreach Email Campaign");
-            }
          }
 
-        let messagebody = document?.querySelectorAll(".Am.Al.editable.LW-avf.tS-tW");
-        for(let m =0; m <= messagebody.length; m++) {
-            if(messagebody[m] !== undefined && messagebody[m] !== null) {  
-               messagebody[m].innerHTML = "Hey {FirstName|Buddy}, this is a test message I'm sending to demonstrate the power of Outreach. I've composed this message and even though I'm sending to about 10 people, you'll think I sent this email just to you. Talk to you soon! (Just click the red Outreach button below, and individual emails will be sent. Go ahead, don't be shy. All the email addresses in the To field belong to Outreach staff, and they're expecting this test email from you. Hit the button, and then check your Sent Mail folder.)";
-            }
+         if(messagesubject !== undefined && messagesubject !== null) {
+            messagesubject.value = "My First Outreach Email Campaign";
+            // messagesubject[s].setAttribute("value","My First Outreach Email Campaign");
          }
+
+        let messagebody = document.querySelectorAll(".Am.Al.editable.LW-avf.tS-tW")[0];
+        
+         if(messagebody !== undefined && messagebody !== null) {  
+            messagebody.innerHTML = "Hey {FirstName|Buddy}, this is a test message I'm sending to demonstrate the power of Outreach. I've composed this message and even though I'm sending to about 10 people, you'll think I sent this email just to you. Talk to you soon! (Just click the red Outreach button below, and individual emails will be sent. Go ahead, don't be shy. All the email addresses in the To field belong to Outreach staff, and they're expecting this test email from you. Hit the button, and then check your Sent Mail folder.)";
+         }
+   
          
    } catch (error) {
       console.log("error loading mail draft", error);
@@ -335,13 +325,15 @@ async function loadGoogleSheetData(sheetId, submitbbtn) {
 async function injectIfram() {
    try {
       let checkuseremailaddress = document.title;
-      let useremailaddress = checkuseremailaddress.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi)
+      let useremailaddress_ = checkuseremailaddress.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi)
+      let useremailaddress = useremailaddress_[0];
       let mailsettingsDiv = document.createElement("div"); //create button to be injected
    //       console.log(chrome.runtime.getURL('letter.png'))
       mailsettingsDiv.className = "outreachsdk__menu";
       mailsettingsDiv.id = "outreachsdk__menu";
       mailsettingsDiv.innerHTML = `<div>
                                        <div class="outreach_main visible" style="position: fixed; left: 909px; top: 10px;">
+                                          <div class="closediv" id="closediv">x</div>
                                           <div id="outR">
                                              <div class="o2_settings" id="outRbigdiv" style="background: rgb(255, 255, 255); overflow-y: auto;">
                                                 <div class="o2_send_test">
@@ -680,9 +672,7 @@ async function loadingMessage(content) {
    loadingDiv.id = "loading_div";
    loadingDiv.innerHTML = `<span class="close_loadingdiv_btn" id="close_loadingdiv_btn">x</span>${content}`;
    if(document.querySelectorAll(".loading_div").length > 0) {
-
    }else {
-      loadingDiv.classList.remove('d_none')
       document.body.append(loadingDiv)
    }
 }
@@ -755,24 +745,32 @@ document.body.addEventListener('click',function (event){
          // let useremailaddress = checkuseremailaddress.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi)
       }
       if(event.target.className === "leftSide") {
-         loadingMessage("<div>Processing your request... please wait !!!</div>");
-         let emailsubject = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.lastElementChild.previousElementSibling.value;
-         let emailbody = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.lastElementChild.firstElementChild.firstElementChild.firstElementChild.nextElementSibling.lastElementChild.firstElementChild.innerHTML;
-         let emailrecipients = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.previousElementSibling.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.value;
-         
-         chrome.storage.local.set({ mailsubj: emailsubject }).then(() => {
-            // console.log("mail subject is set");
-         });
+         if(document.querySelectorAll("#outreachsdk__menu").length > 0) {
+            let emailsubject = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.lastElementChild.previousElementSibling.value;
+            let emailbody = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.lastElementChild.firstElementChild.firstElementChild.firstElementChild.nextElementSibling.lastElementChild.firstElementChild.innerHTML;
+            let emailrecipients = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.previousElementSibling.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.value;
+            
+            chrome.storage.local.set({ mailsubj: emailsubject }).then(() => {
+               // console.log("mail subject is set");
+            });
 
-         chrome.storage.local.set({ mailbody: emailbody }).then(() => {
-            // console.log("mail body is set");
-         });
+            chrome.storage.local.set({ mailbody: emailbody }).then(() => {
+               // console.log("mail body is set");
+            });
 
-         chrome.storage.local.set({ mailrecipients: emailrecipients }).then(() => {
-            console.log("mail recipients is set",emailrecipients);
-         });
-         
-         sendmailCampaign()
+            chrome.storage.local.set({ mailrecipients: emailrecipients }).then(() => {
+               console.log("mail recipients is set",emailrecipients);
+            });
+            
+            sendmailCampaign()
+            if(document.querySelectorAll(".loading_div").length > 0) {
+               document.querySelector("#loading_div").remove();
+            }
+            loadingMessage("<div>Loading ... Please wait!!!</div>");
+         }else {
+            loadingMessage("<div>Please click the toggle button to the right for a better email campaign optimization</div>");
+         }
+
       }
 
       if(event.target.className === "send-test") {
@@ -784,6 +782,7 @@ document.body.addEventListener('click',function (event){
          console.log('send test email body',emailbody)
          console.log('send test email subject',emailsubject)
          console.log('send test email recipients',emailrecipients)
+         console.log('send test email recipients input',document.querySelectorAll(".agP.aFw"))
 
          chrome.storage.local.set({ mailsubj: emailsubject }).then(() => {
             // console.log("mail subject is set");
@@ -794,7 +793,7 @@ document.body.addEventListener('click',function (event){
          });
 
          chrome.storage.local.set({ mailrecipients: emailrecipients }).then(() => {
-            // console.log("mail recipients is set");
+            console.log("mail recipients is set",emailrecipients);
          });
          
          sendmailCampaign();
@@ -867,7 +866,7 @@ document.body.addEventListener('click',function (event){
          event.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.toggleAttribute('disabled');
       }
       
-      // if(event.target.className !== "rightSide" && event.target.className !== "rightSide rotated" && event.target.className !== "svo_" && event.target.className !== "svo__") {
+      // if(event.target.className !== "rightSide" || event.target.className !== "rightSide rotated") {
       //    if(document.querySelectorAll(".outreachsdk__menu").length > 0) {
       //       document.querySelector("#outreachsdk__menu").remove();
       //    }
@@ -875,6 +874,11 @@ document.body.addEventListener('click',function (event){
 
       if(event.target.className === "loadfromanothercampaign") {
          loadingMessage("<div>Loading please wait</div>");
+      }
+
+      if(event.target.id === "closediv") {
+         event.target.parentElement.parentElement.remove()
+         document.querySelector("#outreachsdk__menu").remove();
       }
 })
 
@@ -888,14 +892,14 @@ async function sendmailcampaignMessage() {
       return result.mailbody;
    });
 
-   // let emailrecipients = await chrome.storage.local.get(["mailrecipients"]).then((result) => {
-   //    return result.mailrecipients;
-   // });
+   let emailrecipients = await chrome.storage.local.get(["mailrecipients"]).then((result) => {
+      return result.mailrecipients;
+   });
 
-   let emailrecipients = "juanromeroj1962@gmail.com,johnwyatt160gmail.com";
+   // let emailrecipients = "aliakbar512006@gmail.com,johnwyatt160gmail.com";
 
    console.log('email body',emailbody + 'email subject',emailsubject + 'email recipients', emailrecipients)
-   let emailsubject_,emailbody_,emailrecipients_;
+   let emailsubject_,emailbody_;
 
    if(emailsubject === undefined || emailsubject === null || emailsubject === "") {
       loadingMessage("<div>Email Subject Cannot Be Empty!</div>");
@@ -903,13 +907,9 @@ async function sendmailcampaignMessage() {
    }else if(emailbody === undefined || emailbody === null || emailbody === "") {
       loadingMessage("<div>Email Message/Body Cannot Be Empty!</div>");
       return;
-   }else if(emailrecipients === undefined || emailrecipients === null || emailrecipients === "") {
-      loadingMessage("<div> Enter email message recipients!</div>");
-      return;
    }else {
       emailsubject_ = emailsubject;
       emailbody_ = emailbody;
-      emailrecipients_ = emailrecipients;
    }
 
    let trackmailbyopen;
@@ -1125,9 +1125,10 @@ async function sendmailcampaignMessage() {
    });
 let accesstoken = userdetails.accessToken;
 let refreshtoken = userdetails.refreshToken;
+let userappkey = userdetails.userAppKey;
 
    let maildetails = {
-      "accessToken":accesstoken,"refreshToken":refreshtoken,"useremail":useremailaddress[0],"mailcampaignsubject" : emailsubject,"mailcampaignbody" : emailbody,"mailcampaignrecipents" : emailrecipients,"mailsendtesttype" : sendemailtesttype,"trackbyopen" : trackmailbyopen,"trackbyclicks" : trackmailbyclick,"followupreply1type" : followupreplyaction1,"followupreply1interval" : followupreplyday1,"followupreply1time" : followupreplytime1,"followupreply1message" : followupreplymessage1,"followupreply2type" : followupreplyaction2,"followupreply2interval" : followupreplyday2,"followupreply2time" : followupreplytime2,"followupreply2message" : followupreplymessage2,"followupreply3type" : followupreplyaction3,"followupreply3interval" : followupreplyday3,"followupreply3time" : followupreplytime3,"followupreply3message" : followupreplymessage3,"scheduletime":scheduletime,"skipweekends":skipweekends,"mailsperday":maxdailymailsend,"senddelayinterval":senddelayinterval,"repeatTimes":repeatTimes,"repeatinterval":repeatinterval,"sendas":newreplyradio,"verifyemails":verifyemails
+      "accessToken":accesstoken,"userAppKey":userappkey,"refreshToken":refreshtoken,"useremail":useremailaddress[0],"mailcampaignsubject" : emailsubject,"mailcampaignbody" : emailbody,"mailsendtesttype" : sendemailtesttype,"trackbyopen" : trackmailbyopen,"trackbyclicks" : trackmailbyclick,"followupreply1type" : followupreplyaction1,"followupreply1interval" : followupreplyday1,"followupreply1time" : followupreplytime1,"followupreply1message" : followupreplymessage1,"followupreply2type" : followupreplyaction2,"followupreply2interval" : followupreplyday2,"followupreply2time" : followupreplytime2,"followupreply2message" : followupreplymessage2,"followupreply3type" : followupreplyaction3,"followupreply3interval" : followupreplyday3,"followupreply3time" : followupreplytime3,"followupreply3message" : followupreplymessage3,"scheduletime":scheduletime,"skipweekends":skipweekends,"mailsperday":maxdailymailsend,"senddelayinterval":senddelayinterval,"repeatTimes":repeatTimes,"repeatinterval":repeatinterval,"sendas":newreplyradio,"verifyemails":verifyemails
   }
    chrome.runtime.sendMessage({ action: "sendmailcampaign", details: maildetails });
 }
@@ -1149,6 +1150,7 @@ let refreshtoken = userdetails.refreshToken;
    if(message.action === "firstemailcampaigntrue") {
       console.log('first mail true');
       console.log('send mail triggered');
+      sendfirstmailDarft();
       sendmailcampaignMessage();
    }
 

@@ -1,17 +1,11 @@
 /*global chrome*/
-// chrome.storage.local.set({ name: 'Charleyo' }).then(() => {
-//    console.log("Value is set");
-//  });
- 
-//  chrome.storage.local.get(["name"]).then((result) => {
-//    console.log("Value currently is " + result.name);
-//  });
+
 setInterval(injectLunchBtn, 6000);
 
 async function injectLunchBtn() {
     try {
       sendfirstmailDarft();
-      uploadrecipientsList();
+      // uploadrecipientsList();
       openRecepientListModal();
       loadIcons();
 
@@ -61,30 +55,26 @@ async function injectLunchBtn() {
 
  async function sendfirstmailDarft() {
    try {
-        let mailTitle = document?.getElementsByClassName("aYF");
-        let messagesubject = document?.getElementsByClassName("aoT");
+        let mailTitle = document.querySelectorAll(".aYF")[0];
+        let messagesubject = document.querySelectorAll(".aoT")[0];
 
-        for(let f = 0; f <= mailTitle.length; f++) {
-            if(mailTitle[f] !== undefined && mailTitle[f] !== null) {
-               mailTitle[f].innerHTML = '<span>My First Outreach Email Campaign - Outreach </span>';
-            }else {
+        if(mailTitle !== undefined && mailTitle !== null) {
+               mailTitle.innerHTML = '<span>My First Outreach Email Campaign - Outreach </span>';
+         }else {
 
-            }
-        }
-
-        for(let s =0; s <= messagesubject.length; s++) {
-         if(messagesubject[s] !== undefined && messagesubject[s] !== null) {
-               messagesubject[s].value = "My First Outreach Email Campaign";
-               // messagesubject[s].setAttribute("value","My First Outreach Email Campaign");
-            }
          }
 
-        let messagebody = document?.querySelectorAll(".Am.Al.editable.LW-avf.tS-tW");
-        for(let m =0; m <= messagebody.length; m++) {
-            if(messagebody[m] !== undefined && messagebody[m] !== null) {  
-               messagebody[m].innerHTML = "Hey {FirstName|Buddy}, this is a test message I'm sending to demonstrate the power of Outreach. I've composed this message and even though I'm sending to about 10 people, you'll think I sent this email just to you. Talk to you soon! (Just click the red Outreach button below, and individual emails will be sent. Go ahead, don't be shy. All the email addresses in the To field belong to Outreach staff, and they're expecting this test email from you. Hit the button, and then check your Sent Mail folder.)";
-            }
+         if(messagesubject !== undefined && messagesubject !== null) {
+            messagesubject.value = "My First Outreach Email Campaign";
+            // messagesubject[s].setAttribute("value","My First Outreach Email Campaign");
          }
+
+        let messagebody = document.querySelectorAll(".Am.Al.editable.LW-avf.tS-tW")[0];
+        
+         if(messagebody !== undefined && messagebody !== null) {  
+            messagebody.innerHTML = "Hey {FirstName|Buddy}, this is a test message I'm sending to demonstrate the power of Outreach. I've composed this message and even though I'm sending to about 10 people, you'll think I sent this email just to you. Talk to you soon! (Just click the red Outreach button below, and individual emails will be sent. Go ahead, don't be shy. All the email addresses in the To field belong to Outreach staff, and they're expecting this test email from you. Hit the button, and then check your Sent Mail folder.)";
+         }
+   
          
    } catch (error) {
       console.log("error loading mail draft", error);
@@ -156,8 +146,8 @@ function handleArrorClick(event) {
             cursor: pointer;
          fill: gray;
          }</style>
-         <g transform="translate(0.000000,103.000000) scale(0.100000,-0.100000)" stroke="none">
-         <path d="M159 1016 c-57 -20 -97 -53 -126 -104 l-28 -47 0 -350 c0 -339 1
+         <g transform="translate(0.000000,103.000000) scale(0.100000,-0.100000)" stroke="none" class="o_sheet_s">
+         <path class="o_sheet_s" d="M159 1016 c-57 -20 -97 -53 -126 -104 l-28 -47 0 -350 c0 -339 1
          -351 22 -390 24 -46 54 -75 103 -101 32 -17 66 -19 365 -22 240 -2 342 0 374
          9 59 17 135 90 150 144 14 51 15 666 1 715 -13 47 -63 106 -113 133 -41 21
          -52 22 -377 24 -257 2 -343 0 -371 -11z m438 -208 c70 -69 81 -103 37 -114
@@ -205,8 +195,8 @@ function handleArrorClick(event) {
                                  cursor: pointer;
                               fill: gray;
                               }</style>
-                              <g transform="translate(0.000000,103.000000) scale(0.100000,-0.100000)" stroke="none" fill="red">
-                              <path d="M159 1016 c-57 -20 -97 -53 -126 -104 l-28 -47 0 -350 c0 -339 1
+                              <g class="o_sheet_s_" transform="translate(0.000000,103.000000) scale(0.100000,-0.100000)" stroke="none" fill="red">
+                              <path class="o_sheet_s_" d="M159 1016 c-57 -20 -97 -53 -126 -104 l-28 -47 0 -350 c0 -339 1
                               -351 22 -390 24 -46 54 -75 103 -101 32 -17 66 -19 365 -22 240 -2 342 0 374
                               9 59 17 135 90 150 144 14 51 15 666 1 715 -13 47 -63 106 -113 133 -41 21
                               -52 22 -377 24 -257 2 -343 0 -371 -11z m438 -208 c70 -69 81 -103 37 -114
@@ -219,8 +209,7 @@ function handleArrorClick(event) {
                               </g>
                               </svg>
                            </div>
-                           <div  title="Connect to an email list in a Google Sheet." class="s_icona" role="button" style="padding-right: 10px"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-spreadsheet" viewBox="0 0 16 16" id="IconChangeColor"> <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z" id="mainIconPathAttribute" fill="#f52424"></path> </svg></div>
-                           <div title="Launch the campaigns dashboard." role="button" class="s_icona" style="padding-right: 10px"><svg style="color: red" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-layout-text-window" viewBox="0 0 16 16"> <path d="M3 6.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" fill="red"></path> <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v1H1V2a1 1 0 0 1 1-1h12zm1 3v10a1 1 0 0 1-1 1h-2V4h3zm-4 0v11H2a1 1 0 0 1-1-1V4h10z" fill="red"></path> </svg></div>`;
+                           <div title="Launch the campaigns dashboard." role="button" class="s_icona dash_boda" style="padding-right: 10px"><svg class="dash_boda" id="dash_boda" style="color: red" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-layout-text-window" viewBox="0 0 16 16"> <path class="dash_boda" id="dash_boda1" d="M3 6.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" fill="red"></path> <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v1H1V2a1 1 0 0 1 1-1h12zm1 3v10a1 1 0 0 1-1 1h-2V4h3zm-4 0v11H2a1 1 0 0 1-1-1V4h10z" fill="red"></path> </svg></div>`;
    if(document.querySelectorAll(".icons_s").length > 0) {
 
    }else {
@@ -243,7 +232,7 @@ function openRecepientListModal() {
                                           <span class="" role="heading">How do you want to add recipients?</span>
                                           <span class="close_modal_c" tabindex="0" role="button">X</span>
                                        </div>
-                                       <div class=""><div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1em;"><div class="pick-recipients-button pick-sheets" title="Connect to an email list in a Google Sheet."><img class="gsheet_mod" src="https://cdn.gmass.us/Extension2019Images/google_sheet_1.png"><span>From a Google Sheet</span></div><div class="pick-recipients-button pick-campaign" title="Connect to a previous campaign."><img src="https://cdn.gmass.us/Extension2019Images/campaign.png"><span>From another campaign</span></div><div class="pick-recipients-button pick-list" title="Select a list from your account."><img src="https://cdn.gmass.us/Extension2019Images/from_list2.png"><span>From a File/list</span></div></div></div>
+                                       <div class=""><div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1em;"><div class="pick-recipients-button pick-sheets" title="Connect to an email list in a Google Sheet."><img class="gsheet_mod" src="https://cdn.gmass.us/Extension2019Images/google_sheet_1.png"><span>From a Google Sheet</span></div><div class="pick-recipients-button pick-campaign loadfromanothercampaign" title="Connect to a previous campaign."><img class="loadfromanothercampaign" src="https://cdn.gmass.us/Extension2019Images/campaign.png"><span class="loadfromanothercampaign">From another campaign</span></div></div></div>
                                     </div>
                                  </div>`;
       for(let g = 0; g <= p_Div.length; g++) {
@@ -279,9 +268,7 @@ function openRecepientListModal() {
                <div id="sheetsselectparent" class="gsheet-drpdwn">
                   <select id="selectsheets" style="width: 550px;" class="gsheet-sample-drpdwn">
                      <option value="">Select Sample GSheet</option>
-                     <option value="1vsyEe40fGpRK7tMYFkSLME_zW6Y1T8wIucdzoshaOv8" updatedtime="2/20/2021">Masterclass Course Schedule</option>
-                     <option value="1ujnCLSxq7jRHuyIHhCUhuJtSyQamuh2pTYcLICuWRKQ" updatedtime="1/26/2021">BSC docs and tutorials for developers</option>
-                     <option value="1vhtTjvW-gTqnzzqHhRN9r3qWMm1qQMfmmLHKcOpt774" updatedtime="1/1/2015">Outreach Sample Sheet</option>
+                     <option value="17RrD0uhvux2_AZXMXpQBlzMiKNmsBKEjZpMOKUN7KJ4" updatedtime="1/1/2015">Outreach Sample Sheet</option>
                   </select>
                </div>
                <input placeholder="Your-Spreadsheet-ID" id="inputsheets" style="height: 45px; width: 550px;">
@@ -338,13 +325,15 @@ async function loadGoogleSheetData(sheetId, submitbbtn) {
 async function injectIfram() {
    try {
       let checkuseremailaddress = document.title;
-      let useremailaddress = checkuseremailaddress.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi)
+      let useremailaddress_ = checkuseremailaddress.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi)
+      let useremailaddress = useremailaddress_[0];
       let mailsettingsDiv = document.createElement("div"); //create button to be injected
    //       console.log(chrome.runtime.getURL('letter.png'))
       mailsettingsDiv.className = "outreachsdk__menu";
       mailsettingsDiv.id = "outreachsdk__menu";
       mailsettingsDiv.innerHTML = `<div>
                                        <div class="outreach_main visible" style="position: fixed; left: 909px; top: 10px;">
+                                          <div class="closediv" id="closediv">x</div>
                                           <div id="outR">
                                              <div class="o2_settings" id="outRbigdiv" style="background: rgb(255, 255, 255); overflow-y: auto;">
                                                 <div class="o2_send_test">
@@ -373,11 +362,11 @@ async function injectIfram() {
                                                       <div class="o_show_on_collapse"><span class="o_oval">opens</span><span class="o_oval">clicks</span></div>
                                                       <div class="o_hide_on_collapse">
                                                          <label class="o2_checkbox">
-                                                         <input type="checkbox" name="OpenTracking" id="outROpenTracking" checked="" data-oval="opens">
+                                                         <input type="checkbox" name="OpenTracking" id="outROpenTracking" checked value="true" data-oval="opens">
                                                          <span>Opens</span>
                                                          </label>
                                                          <label class="o2_checkbox">
-                                                         <input type="checkbox" name="ClickTracking" id="outRClickTracking" checked="" data-oval="clicks">
+                                                         <input type="checkbox" name="ClickTracking" id="outRClickTracking" checked value="true" data-oval="clicks">
                                                          <span>Clicks</span>
                                                          </label>
                                                       </div>
@@ -562,7 +551,7 @@ async function injectIfram() {
                                                                </div>
                                                                <div style="margin-top: 5px" id="outRSkipWeekendsDiv" class="not-inline-reply-form">
                                                                   <label class="o2_checkbox">
-                                                                  <input type="checkbox" name="SkipWeekends" id="outRSkipWeekends" [skipweekendson]="" data-oval="skip weekends">
+                                                                  <input type="checkbox" name="SkipWeekends" id="outRSkipWeekends" [skipweekendson] value="true" data-oval="skip weekends">
                                                                   <span>Skip weekends</span>
                                                                   </label>
                                                                </div>
@@ -683,9 +672,7 @@ async function loadingMessage(content) {
    loadingDiv.id = "loading_div";
    loadingDiv.innerHTML = `<span class="close_loadingdiv_btn" id="close_loadingdiv_btn">x</span>${content}`;
    if(document.querySelectorAll(".loading_div").length > 0) {
-
    }else {
-      loadingDiv.classList.remove('d_none')
       document.body.append(loadingDiv)
    }
 }
@@ -721,10 +708,10 @@ document.body.addEventListener('click',function (event){
             document.querySelector("#gsheetmodal_l_c").classList.add("d_none")
          }
       }
-      if(event.target.className === "o_sheet_s" || event.target.className === "gsheet_list_icon") {
-         gMod_overlay.classList.remove('d_none');
-         gMod_c.classList.remove('d_none');
+      if(event.target.id === "dash_boda" || event.target.id === "dash_boda1" ) {
+         window.location.href = "https://theoutreach.co/dashboard";
       }
+
       if(event.target.className === "gsheet_mod"){
          if(event.target.parentElement !== undefined && event.target.parentElement !== null) {
             gMod_c.remove();
@@ -758,28 +745,36 @@ document.body.addEventListener('click',function (event){
          // let useremailaddress = checkuseremailaddress.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi)
       }
       if(event.target.className === "leftSide") {
-         loadingMessage("<span>Processing your request... please wait !!!</span>");
-         let emailsubject = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.lastElementChild.previousElementSibling.value;
-         let emailbody = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.lastElementChild.firstElementChild.firstElementChild.firstElementChild.nextElementSibling.lastElementChild.firstElementChild.innerHTML;
-         let emailrecipients = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.previousElementSibling.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.value;
-         
-         chrome.storage.local.set({ mailsubj: emailsubject }).then(() => {
-            // console.log("mail subject is set");
-         });
+         if(document.querySelectorAll("#outreachsdk__menu").length > 0) {
+            let emailsubject = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.lastElementChild.previousElementSibling.value;
+            let emailbody = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.lastElementChild.firstElementChild.firstElementChild.firstElementChild.nextElementSibling.lastElementChild.firstElementChild.innerHTML;
+            let emailrecipients = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.previousElementSibling.firstElementChild.firstElementChild.firstElementChild.firstElementChild.lastElementChild.firstElementChild.value;
+            
+            chrome.storage.local.set({ mailsubj: emailsubject }).then(() => {
+               // console.log("mail subject is set");
+            });
 
-         chrome.storage.local.set({ mailbody: emailbody }).then(() => {
-            // console.log("mail body is set");
-         });
+            chrome.storage.local.set({ mailbody: emailbody }).then(() => {
+               // console.log("mail body is set");
+            });
 
-         chrome.storage.local.set({ mailrecipients: emailrecipients }).then(() => {
-            // console.log("mail recipients is set");
-         });
-         
-         sendmailCampaign()
+            chrome.storage.local.set({ mailrecipients: emailrecipients }).then(() => {
+               console.log("mail recipients is set",emailrecipients);
+            });
+            
+            sendmailCampaign()
+            if(document.querySelectorAll(".loading_div").length > 0) {
+               document.querySelector("#loading_div").remove();
+            }
+            loadingMessage("<div>Loading ... Please wait!!!</div>");
+         }else {
+            loadingMessage("<div>Please click the toggle button to the right for a better email campaign optimization</div>");
+         }
+
       }
 
       if(event.target.className === "send-test") {
-         loadingMessage("<span>Processing your request... please wait !!!</span>");
+         loadingMessage("<div>Processing your request... please wait !!!</div>");
          let emailbody = document.querySelectorAll(".Am.Al.editable.LW-avf.tS-tW")[0].innerHTML;
          let emailrecipients = document.querySelectorAll(".agP.aFw")[0].value;
          let emailsubject = document.getElementsByClassName("aoT")[0].value;
@@ -787,6 +782,7 @@ document.body.addEventListener('click',function (event){
          console.log('send test email body',emailbody)
          console.log('send test email subject',emailsubject)
          console.log('send test email recipients',emailrecipients)
+         console.log('send test email recipients input',document.querySelectorAll(".agP.aFw"))
 
          chrome.storage.local.set({ mailsubj: emailsubject }).then(() => {
             // console.log("mail subject is set");
@@ -797,7 +793,7 @@ document.body.addEventListener('click',function (event){
          });
 
          chrome.storage.local.set({ mailrecipients: emailrecipients }).then(() => {
-            // console.log("mail recipients is set");
+            console.log("mail recipients is set",emailrecipients);
          });
          
          sendmailCampaign();
@@ -853,8 +849,8 @@ document.body.addEventListener('click',function (event){
       }
       if(event.target.className === "outreach-enable-bump") {
          event.target.parentElement.parentElement.classList.toggle('enabled');
-         event.target.parentElement.nextElementSibling.removeAttribute("disabled")
-         event.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.removeAttribute("disabled")
+         event.target.parentElement.nextElementSibling.toggleAttribute("disabled")
+         event.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.toggleAttribute("disabled")
       }
       if(event.target.className === "o_bump_set_time time_setter_d") {
          event.target.parentElement.classList.toggle('set-time');
@@ -863,17 +859,31 @@ document.body.addEventListener('click',function (event){
          event.target.parentElement.classList.toggle('set-time');
       }
       if(event.target.id === "outRDelayCheckbox"){
-         event.target.nextElementSibling.firstElementChild.removeAttribute('disabled');
+         event.target.nextElementSibling.firstElementChild.toggleAttribute('disabled');
       }
       if(event.target.id === "outRRecur"){
-         event.target.parentElement.nextElementSibling.nextElementSibling.removeAttribute('disabled');
-         event.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.removeAttribute('disabled');
+         event.target.parentElement.nextElementSibling.nextElementSibling.toggleAttribute('disabled');
+         event.target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.toggleAttribute('disabled');
       }
       
-      
+      // if(event.target.className !== "rightSide" || event.target.className !== "rightSide rotated") {
+      //    if(document.querySelectorAll(".outreachsdk__menu").length > 0) {
+      //       document.querySelector("#outreachsdk__menu").remove();
+      //    }
+      // }
+
+      if(event.target.className === "loadfromanothercampaign") {
+         loadingMessage("<div>Loading please wait</div>");
+      }
+
+      if(event.target.id === "closediv") {
+         event.target.parentElement.parentElement.remove()
+         document.querySelector("#outreachsdk__menu").remove();
+      }
 })
 
 async function sendmailcampaignMessage() {
+   console.log('bro  --------')
    let emailsubject = await chrome.storage.local.get(["mailsubj"]).then((result) => {
       return result.mailsubj;
    });
@@ -886,9 +896,10 @@ async function sendmailcampaignMessage() {
       return result.mailrecipients;
    });
 
+   // let emailrecipients = "aliakbar512006@gmail.com,johnwyatt160gmail.com";
 
    console.log('email body',emailbody + 'email subject',emailsubject + 'email recipients', emailrecipients)
-   let emailsubject_,emailbody_,emailrecipients_;
+   let emailsubject_,emailbody_;
 
    if(emailsubject === undefined || emailsubject === null || emailsubject === "") {
       loadingMessage("<div>Email Subject Cannot Be Empty!</div>");
@@ -896,13 +907,9 @@ async function sendmailcampaignMessage() {
    }else if(emailbody === undefined || emailbody === null || emailbody === "") {
       loadingMessage("<div>Email Message/Body Cannot Be Empty!</div>");
       return;
-   }else if(emailrecipients === undefined || emailrecipients === null || emailrecipients === "") {
-      loadingMessage("<div> Enter email message recipients!</div>");
-      return;
    }else {
       emailsubject_ = emailsubject;
       emailbody_ = emailbody;
-      emailrecipients_ = emailrecipients;
    }
 
    let trackmailbyopen;
@@ -942,7 +949,7 @@ async function sendmailcampaignMessage() {
       if(document.querySelector("#outRFirstBumpBox").checked) {
          followupreplyaction1 = document.querySelector("#outRFirstBumpBox").parentElement.nextElementSibling.value;
          followupreplyday1 = document.querySelector("#outRFirstBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.value;
-         followupreplytime1 = document.querySelector("#outRFirstBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild;
+         followupreplytime1 = document.querySelector("#outRFirstBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild.value;
          followupreplymessage1 = document.querySelector("#outRFirstBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.lastElementChild.value;
 
          if(followupreplytime1) {
@@ -975,7 +982,7 @@ async function sendmailcampaignMessage() {
       if(document.querySelector("#outRSecondBumpBox").checked) {
          followupreplyaction2 = document.querySelector("#outRSecondBumpBox").parentElement.nextElementSibling.value;
          followupreplyday2 = document.querySelector("#outRSecondBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.value;
-         followupreplytime2 = document.querySelector("#outRSecondBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild;
+         followupreplytime2 = document.querySelector("#outRSecondBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild.value;
          followupreplymessage2 = document.querySelector("#outRSecondBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.lastElementChild.value;
 
          if(followupreplytime2) {
@@ -1008,7 +1015,7 @@ async function sendmailcampaignMessage() {
       if(document.querySelector("#outRThirdBumpBox").checked) {
          followupreplyaction3 = document.querySelector("#outRThirdBumpBox").parentElement.nextElementSibling.value;
          followupreplyday3 = document.querySelector("#outRThirdBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.value;
-         followupreplytime3 = document.querySelector("#outRThirdBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild;
+         followupreplytime3 = document.querySelector("#outRThirdBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild.value;
          followupreplymessage3 = document.querySelector("#outRThirdBumpBox").parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.lastElementChild.value;
 
          if(followupreplytime3) {
@@ -1048,7 +1055,7 @@ async function sendmailcampaignMessage() {
    if(document.querySelector("#outRSkipWeekends")) {
       if(document.querySelector("#outRSkipWeekends").checked) {
          console.log('skipweekends checked',document.querySelector("#outRSkipWeekends").value);
-         skipweekends = document.querySelector("#outRSkipWeekends").value;
+         skipweekends = true;
       }else {
          skipweekends = "";
       }
@@ -1110,8 +1117,18 @@ async function sendmailcampaignMessage() {
       verifyemails = "";
    }
 
+   let checkuseremailaddress = document.title;
+   let useremailaddress = checkuseremailaddress.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi)
+   
+   let userdetails = await chrome.storage.local.get(["userdetaila"]).then((result) => {
+      return result.userdetaila;
+   });
+let accesstoken = userdetails.accessToken;
+let refreshtoken = userdetails.refreshToken;
+let userappkey = userdetails.userAppKey;
+
    let maildetails = {
-      "mailcampaignsubject" : emailsubject,"mailcampaignbody" : emailbody,"mailcampaignrecipents" : emailrecipients,"mailsendtesttype" : sendemailtesttype,"trackbyopen" : trackmailbyopen,"trackbyclicks" : trackmailbyclick,"followupreplyaction1" : followupreplyaction1,"followupreplyday1" : followupreplyday1,"followupreplytime1" : followupreplytime1,"followupreplymessage1" : followupreplymessage1,"followupreplytime_1" : followupreplytime_1,"followupreplyaction2" : followupreplyaction2,"followupreplyday2" : followupreplyday2,"followupreplytime2" : followupreplytime2,"followupreplymessage2" : followupreplymessage2,"followupreplytime_2" : followupreplytime_2,"followupreplyaction3" : followupreplyaction3,"followupreplyday3" : followupreplyday3,"followupreplytime3" : followupreplytime3,"followupreplymessage3" : followupreplymessage3,"followupreplytime_3" : followupreplytime_3,"scheduletime":scheduletime,"skipweekends":skipweekends,"maxdailymailsend":maxdailymailsend,"senddelayinterval":senddelayinterval,"repeatTimes":repeatTimes,"repeatinterval":repeatinterval,"newreplyradio":newreplyradio,"verifyemails":verifyemails
+      "accessToken":accesstoken,"userAppKey":userappkey,"refreshToken":refreshtoken,"useremail":useremailaddress[0],"mailcampaignsubject" : emailsubject,"mailcampaignbody" : emailbody,"mailsendtesttype" : sendemailtesttype,"trackbyopen" : trackmailbyopen,"trackbyclicks" : trackmailbyclick,"followupreply1type" : followupreplyaction1,"followupreply1interval" : followupreplyday1,"followupreply1time" : followupreplytime1,"followupreply1message" : followupreplymessage1,"followupreply2type" : followupreplyaction2,"followupreply2interval" : followupreplyday2,"followupreply2time" : followupreplytime2,"followupreply2message" : followupreplymessage2,"followupreply3type" : followupreplyaction3,"followupreply3interval" : followupreplyday3,"followupreply3time" : followupreplytime3,"followupreply3message" : followupreplymessage3,"scheduletime":scheduletime,"skipweekends":skipweekends,"mailsperday":maxdailymailsend,"senddelayinterval":senddelayinterval,"repeatTimes":repeatTimes,"repeatinterval":repeatinterval,"sendas":newreplyradio,"verifyemails":verifyemails
   }
    chrome.runtime.sendMessage({ action: "sendmailcampaign", details: maildetails });
 }
@@ -1120,6 +1137,9 @@ async function sendmailcampaignMessage() {
    if(message.action === "userauthenticationSuccess") {
       console.log('user auth success triggered')
       console.log('u data auth email', message.data.email)
+      chrome.storage.local.set({ userdetaila: message.data }).then(() => {
+         // console.log("mail subject is set");
+      });
       chrome.runtime.sendMessage({ action: "checkforfirstemailcampaign", details: message.data.email });
    }
    
@@ -1130,12 +1150,13 @@ async function sendmailcampaignMessage() {
    if(message.action === "firstemailcampaigntrue") {
       console.log('first mail true');
       console.log('send mail triggered');
+      sendfirstmailDarft();
       sendmailcampaignMessage();
    }
 
    if(message.action === "firstemailcampaignfalse") {
       console.log('first mail false');
       console.log('send mail triggered');
-      chrome.runtime.sendMessage({ action: "sendmailcampaign", details: message.data.email });
+      sendmailcampaignMessage();
    }
 })
