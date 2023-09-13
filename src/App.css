@@ -8,6 +8,19 @@
 .App {
   text-align: center;min-width: 450px;width: 100%;height: 100%;
 }
+.table_ {
+  font-family: "Montserrat";color: #343434;
+}
+.table_ td {
+  padding: 5px;text-align: left;font-size: 14px;font-weight: 600;color: #174dd3 !important;
+}
+.uemail {
+  font-family: "Montserrat";
+}
+.sidebar_ ul li {
+  font-family: "Montserrat";margin: 20px 0 20px 0;color: #444446;font-weight: 600;font-size: 14px;padding: 5px 5px 5px 5px;
+  list-style: none;cursor: pointer;text-decoration: underline;background-color: #f1f6f7;
+}
 .signin_btn {
   width: auto;
   margin: 4rem auto 2rem auto !important;
@@ -63,7 +76,7 @@
   margin: 5rem auto;
 }
 .dash_main h1,.loginmain h1 {
-  font-family: "Poppins";
+  font-family: "Poppins";font-size: 20px;
 }
 .dash_main h2, .loginmain h2 {
   font-family: "Roboto";margin-top: 20px;
