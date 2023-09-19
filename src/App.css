@@ -87,6 +87,9 @@
 .dash_main p {
   font-family: "Montserrat";margin: 10px auto;padding: 10px 20px 0 20px;line-height: 20px;
 }
+.no-campaign {
+  font-family: "Poppins";font-weight: 600;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

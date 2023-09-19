@@ -104,7 +104,7 @@ interface CampaignDetails {
                "Content-type": "application/json"
             }
             }  
-            const {data} = await axios.post("https://theoutreachapp.onrender.com/user/verifyuserdata", {
+            const {data} = await axios.post("http://localhost:3000/user/verifyuserdata", {
                userappkey
             }, config);
             localStorage.setItem("userData_", JSON.stringify(data))
@@ -124,7 +124,7 @@ interface CampaignDetails {
                "Content-type": "application/json"
             }
             }  
-            const {data} = await axios.post("https://theoutreachapp.onrender.com/campaigns/campaignsdetails", {
+            const {data} = await axios.post("http://localhost:3000/campaigns/campaignsdetails", {
                userappkey
             }, config);
             setcampaignDetails(data.campaigndetails)
@@ -140,7 +140,7 @@ interface CampaignDetails {
                "Content-type": "application/json"
             }
             }  
-            const {data} = await axios.post("https://theoutreachapp.onrender.com/campaigns/draftscount", {
+            const {data} = await axios.post("http://localhost:3000/campaigns/draftscount", {
                userappkey
             }, config);
             setdraftCount(data.draftcount);
@@ -157,7 +157,7 @@ interface CampaignDetails {
                "Content-type": "application/json"
             }
             }  
-            const {data} = await axios.post("https://theoutreachapp.onrender.com/campaigns/openscount", {
+            const {data} = await axios.post("http://localhost:3000/campaigns/openscount", {
                userappkey
             }, config);
             setopenCampaignCount(data.opencampaigncount);
@@ -252,7 +252,7 @@ interface CampaignDetails {
                </tbody>
             </Table>
             ) : (
-               <p>No campaign details available.</p>
+               <div className='no-campaign'>No campaign details available.</div>
              )}
          </div>
       </div>

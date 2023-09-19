@@ -19,80 +19,16 @@ import { fas, faCheck, faCheckCircle, faCheckSquare, faCheckDouble, faRightFromB
 import { faTwitter, faFontAwesome, faGoogle } from '@fortawesome/free-brands-svg-icons'
 library.add(fas, faTwitter, faFontAwesome, faGoogle, faCheck,faCheckCircle)
 
-const Dashboard = () => {
+const Privacy = () => {
 //    const [modalState, setModalState] = useState<boolean>(false);
 //    const [recipientModalState, setRecipientModalState] = useState<boolean>(false);
 //    const [bulkRecipients, setBulkRecipients] = useState<string>("");
 //    const [recipientsInputType, seRecipientsInputType] = useState<string>("");
 
-interface CampaignDetails {
-   Bounces: number,
-   Clicks: number,
-   Opens: number,
-   Replies: number,
-   action: number,
-   campaignId: number,
-   advance: {
-      sendas: string,
-      verifyemail: string,
-   },
-   autofollowup: {
-      firstfollowup: {
-         reply1interval: number,
-         reply1message: string,
-         reply1type: string,
-         status: string,
-      },
-      secondfollowup: {
-         reply2interval: number,
-         reply2message: string,
-         reply2type: string,
-         status: string,
-      },
-      thirdfollowup: {
-         reply3interval: number,
-         reply3message: string,
-         reply3type: string,
-         status: string,
-      },
-   },
-   createat: Date,
-   emailId: string,
-   emailaddress: string,
-   emailbody: string,
-   emailrecipients: any,
-   emailsubject: string,
-   schedule: {
-      speed: {
-         delay: string,
-         mailsPerDay: number
-      },
-      repeat: {
-         repeatinterval: string,
-         repeattimes: number
-      },
-      scheduletime: string,
-      skipweekends: string,
-   },
-   tracking: {
-      isClicked: boolean,
-      isOpened: boolean,
-      redlinktext: string,
-      redlinkurl: string,
-   },
-   trackingId: string,
-   userId: string,
-   _id: string
-}
-
-
    const [userappkey, setAppKey] = useState<any>("");
    const [userData, setUserData] = useState<any>("");
    const [userEmail, setUserEmail] = useState<any>("");
-   const [draftCount, setdraftCount] = useState<any>("");
-   const [openCampaignCount, setopenCampaignCount] = useState<any>("");
-   const [campaigndetails, setcampaignDetails] = useState<CampaignDetails[]>([]);
-
+   
    const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -101,166 +37,28 @@ interface CampaignDetails {
    
    useEffect(() => {
       setAppKey(localStorage.getItem("signature"));
-      async function getUserdata() {
-         try {
-            const config = {
-            headers: {
-               "Content-type": "application/json"
-            }
-            }  
-            const {data} = await axios.post("http://localhost:3000/user/verifyuserdata", {
-               userappkey
-            }, config);
-            localStorage.setItem("userData_", JSON.stringify(data))
-            setUserEmail(data.email);
-            setUserData(localStorage.getItem("userData_"));
-            getcampaignsdetails();
-         } catch (error) {
-            console.log(error)
-         }
-      }
-      getUserdata();
-
-      async function getcampaignsdetails() {
-         try {
-            const config = {
-            headers: {
-               "Content-type": "application/json"
-            }
-            }  
-            const {data} = await axios.post("http://localhost:3000/campaigns/campaignsdetails", {
-               userappkey
-            }, config);
-            setcampaignDetails(data.campaigndetails)
-         } catch (error) {
-            console.log(error)
-         }
-      }
-
-      async function getdraftscount() {
-         try {
-            const config = {
-            headers: {
-               "Content-type": "application/json"
-            }
-            }  
-            const {data} = await axios.post("http://localhost:3000/campaigns/draftscount", {
-               userappkey
-            }, config);
-            setdraftCount(data.draftcount);
-         } catch (error) {
-            console.log(error)
-         }
-      }
-      getdraftscount();
-
-      async function getopenscount() {
-         try {
-            const config = {
-            headers: {
-               "Content-type": "application/json"
-            }
-            }  
-            const {data} = await axios.post("http://localhost:3000/campaigns/openscount", {
-               userappkey
-            }, config);
-            setopenCampaignCount(data.opencampaigncount);
-         } catch (error) {
-            console.log(error)
-         }
-      }
-      getopenscount();
       
-
-   }, [userappkey,userData,userEmail])
-
-   console.log('c data', campaigndetails)
-   console.log('c data l', campaigndetails.length)
+         }, [userappkey,userData,userEmail])
 
    return (
       <div>
-         <Navbar collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark" className="bg-body-tertiary">
-            <Container className="d-flex justify-content-between">
-            <Navbar.Brand href="#"><img src={logo} alt='logo'/></Navbar.Brand>
-            <div>
-               <span className='text-white m-lg-2 uemail'>{userEmail}</span>
-               <Button onClick={handleShow} variant='secondary'><FontAwesomeIcon icon={faAlignJustify} size='lg' className='text-white'/></Button>
-               <Button onClick={handleShow} variant='transparent'><FontAwesomeIcon icon={faRightFromBracket} size='lg' className='text-white'/></Button>
-            </div>
-            </Container>
-         </Navbar>
-         
-
-         <Offcanvas show={show} onHide={handleClose} backdrop="static">
-            <Offcanvas.Header className='text-white' closeButton>
-               <Offcanvas.Title><img src={logo} alt='logo'/></Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-               <div className='sidebar_ m-0 p-0'>
-                  <ul className='m-0 p-0'>
-                     <li className='li_'>
-                        <Link to={'#'} className='cursor-pointer'/> Campaign Opens
-                     </li>
-                     <li className='li_'>
-                        <Link to={'#'} /> Campaign Clicks
-                     </li>
-                     <li className='li_'>
-                        <Link to={'#'} /> Campaign Sent
-                     </li>
-                     <li className='li_'>
-                        <Link to={'#'} /> Campaign Draft
-                     </li>
-                     <li className='li_'>
-                        <Link to={'#'} /> Campaign Report
-                     </li>
-                  </ul>
-               </div>
-            </Offcanvas.Body>
-         </Offcanvas>
-            
-         <div className='dash_main'>
-            
-            <h1>Hello, {userEmail}</h1>
-            <h2>Welcome To Your Outreach Dashboard</h2>
-            <div className='gmail_redirect'><a href="https://mail.google.com/mail/u/0" target='_blank' rel='noopener noreferrer'>Go To Your GMail Inbox</a></div>
-            <div className='dashb_main'>
-               <p>This is where all your email campaign details and records for tracking will be displayed</p>
-               <p>Use the extension to interact with Gmail, send email campaigns and set your campaign schedules and others</p>
-            </div>
-
-            {campaigndetails && campaigndetails.length > 0 ? (
-            <Table responsive className='table_'>
-               <thead>
-               <tr>
-                  <th>ID</th>
-                  <th >Campaign</th>
-                  <th >Recipients</th>
-                  <th >Opens</th>
-                  <th >Clicks</th>
-                  <th >Replies</th>
-                  <th >Bounces</th>
-               </tr>
-               </thead>
-               <tbody>
-               {campaigndetails.map(( campaign: CampaignDetails ) => (
-               <tr key={campaign._id}>
-                  <td > {campaign._id}</td>
-                  <td > {campaign.emailsubject}</td>
-                  <td > <a href="#d">{campaign.emailrecipients.split(',').length}</a></td>
-                  <td > {campaign.Opens}</td>
-                  <td > {campaign.Clicks}</td>
-                  <td > {campaign.Replies}</td>
-                  <td > {campaign.Bounces}</td>
-               </tr>
-               ))}
-               </tbody>
-            </Table>
-            ) : (
-               <p>No campaign details available.</p>
-             )}
-         </div>
+         <p>Many users are concerned about the privacy of their email marketing lists and whether GMass stores their email addresses and the contents of email messages, and whether any of this data is shared with third parties. The information below is meant to address these concerns.</p>
+         <h2>Overview of how GMass works</h2>
+         <p>GMass works by transferring data to and from your Gmail account. Most of this data transfer occurs via numeric identifiers specific to Gmail and the Gmail API. In some cases, email addresses are transferred from the GMass server back to the Gmail interface, but in a secure manner over SSL. Gmail does not allow a third party integration like GMass to connect to account data without the use of SSL.</p>
+         <h2>How are your email lists used?</h2>
+         <p>In order to track opens, clicks, and provide unsubscribe functionality via the GMass unsubscribe link, our database does store the email addresses to which you are sending email. This data is stored in a database, secured by two layers of firewalls, and is never shared with any third parties. GMass is similar in this regard to well-known email marketing systems like MailChimp, where storage of email addresses is required to provide standard email marketing features.</p>
+         <h2>Does GMass store the content of your email message?</h2>
+         <p>No. Unlike a traditional email marketing service like MailChimp, the GMass database does not store the contents of your email marketing campaigns, except for the From Address used for each campaign.</p>
+         <p>We store the From Address because in Gmail, multiple From Addresses can be authorized for use in a single Gmail account, and by storing the From Address, we are better able to support users by being able to look up their GMass account when they tell us they sent a campaign “from” a certain address.</p>
+         <p>We do not store the content (Subject / Message) of email campaigns, but the content does pass through our server ephemerally. This is required in order to add the mechanisms to an email message that allows GMass to track opens and clicks on individual email messages. This process happens in microseconds and the content of an email message does not live on our server beyond that.</p>
+         <h2>Does GMass share any of your email list information with third parties?</h2>
+         <p>No. GMass is a tech product built by developers who are email marketing enthusiasts. The company behind GMass, Wordzen, Inc., is a software company in the business of creating Gmail plugins and not in the business of selling or renting data.</p>
+         <h2>Data Deletion Requests</h2>
+         <p>In compliance with GDPR, any user may request that his/her data be deleted from our servers. To make such a request send an email to datadeletion@wordzen.com from the GMass account whose data you wish to be deleted.</p>
+         <h2>Email Warmup</h2>
+         <p>GMass does not provide email warming services for Google accounts.</p>
       </div>
    )
    }
 
-export default Dashboard
+export default Privacy
