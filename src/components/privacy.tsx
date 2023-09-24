@@ -127,8 +127,6 @@ const Privacy = () => {
             <p>We may update this Privacy Policy from time to time. The most recent version will be posted on our website with the last updated date.</p>
             <h3>10. Contact Us</h3>
             <p>If you have any questions or concerns about this Privacy Policy or our practices, please contact us at <a href='mailto:Alexryancl@gmail.com' rel="noopener noreferrer">Alexryancl@gmail.com</a></p>
-            <p>In order to track opens, clicks, and provide unsubscribe functionality via the GMass unsubscribe link, our database does store the email addresses to which you are sending email. This data is stored in a database, secured by two layers of firewalls, and is never shared with any third parties. GMass is similar in this regard to well-known email marketing systems like MailChimp, where storage of email addresses is required to provide standard email marketing features.</p>
-            
          </div>
          <Footer/>
       </div>
