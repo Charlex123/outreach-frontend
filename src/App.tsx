@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import './App.css';
+import './styles/App.css';
+import './styles/privacy_terms.css';
 import DataProvider from './context/authcontext';
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";

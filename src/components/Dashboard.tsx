@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas, faCheck, faCheckCircle, faCheckSquare, faCheckDouble, faRightFromBracket, faAlignJustify } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFontAwesome, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import Footer from './Footer'
 library.add(fas, faTwitter, faFontAwesome, faGoogle, faCheck,faCheckCircle)
 
 const Dashboard = () => {
@@ -255,6 +256,7 @@ interface CampaignDetails {
                <div className='no-campaign'>No campaign details available.</div>
              )}
          </div>
+         <Footer/>
       </div>
    )
    }
