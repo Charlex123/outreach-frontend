@@ -28,7 +28,7 @@ const Footer = () => {
    
    return (
       <div>
-         <div className='footer'><div className='footam'><br></br><br></br>TheOutreach | ©2023<br></br><br></br><br></br></div></div>
+         <div className='footer'><div className='footam'><br></br><br></br>TheOutreach | ©2023 <a href='privacy-policy' rel='noopener noreferrer'>Privacy Policy</a> <a href='terms' rel='noopener noreferrer'>Terms</a>  <br></br><br></br><br></br></div></div>
       </div>
    )
    }
