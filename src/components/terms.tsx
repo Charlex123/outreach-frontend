@@ -50,7 +50,6 @@ const Terms = () => {
             <div>
                <span className='text-white m-lg-2 uemail'>{userEmail}</span>
                <Button onClick={handleShow} variant='secondary'><FontAwesomeIcon icon={faAlignJustify} size='lg' className='text-white'/></Button>
-               <Button onClick={handleShow} variant='transparent'><FontAwesomeIcon icon={faRightFromBracket} size='lg' className='text-white'/></Button>
             </div>
             </Container>
          </Navbar>
