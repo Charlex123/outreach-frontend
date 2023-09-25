@@ -28,7 +28,7 @@ const Footer = () => {
    
    return (
       <div>
-         <div className='footer'><div className='footam' style={{padding: '5rem auto'}}>TheOutreach | ©2023</div></div>
+         <div className='footer'><div className='footam'><br></br><br></br>TheOutreach | ©2023<br></br><br></br><br></br></div></div>
       </div>
    )
    }
