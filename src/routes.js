@@ -4,6 +4,7 @@ import Dashboard from "./components/Dashboard";
 import Login from './components/Login';
 import Privacy from './components/privacy';
 import Terms from './components/terms';
+import Support from './components/Support';
 
 
 // ----------------------------------------------------------------------
@@ -14,6 +15,7 @@ export default function Router() {
     { path: '/social', element: <Social /> },
     { path: '/privacy-policy', element: <Privacy /> },
     { path: '/terms', element: <Terms /> },
+    { path: '/support', element: <Support /> },
     { path: '/', element: <Login /> },
   ]);
 }
