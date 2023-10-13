@@ -17,6 +17,16 @@
 .container .conta1 .accheader {
     font-family: "Poppins", sans-serif;font-size: 14px;font-weight: 600;
 }
+.alertMessage {
+    font-size: 14px;font-family: "Poppins", sans-serif;color: green;margin: 3rem auto;background-color: aquamarine;
+    width: fit-content;padding: 15px;border-radius: 4px;
+}
+.alertMessage button {
+    background-color: transparent;border: 0;
+}
+.fa-close {
+    background-color: transparent;border: 0;
+}
 .form-label {
     font-family: "Montserrat",sans-serif;text-align: left;margin-left: 0;
 }

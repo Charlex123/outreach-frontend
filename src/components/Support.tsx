@@ -6,19 +6,32 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import Accordion from 'react-bootstrap/Accordion';
 import Footer from './Footer';
 import Nav from './Nav';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas, faCheck, faXmark, faCheckSquare,faAlignJustify, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Support = () => {
 
    const [formStatus, setFormStatus] = useState('Send')
+   const [isAlertOpen, setAlertOpen] = useState(false);
 
+   const closeAlertModal = (e: any) => {
+      setFormStatus('Submit');
+      setAlertOpen(false)
+   }
+   
    const onSubmit = (e: any) => {
       e.preventDefault()
-      setFormStatus('Submitting...')
-      const { name, email, message } = e.target.elements
+      setFormStatus('Submitted');
+
+      setAlertOpen(true)
+
+      const { name, email, message, subject } = e.target.elements
       let conFom = {
          name: name.value,
          email: email.value,
          message: message.value,
+         subject: subject.value,
       }
       console.log(conFom)
    }
@@ -26,6 +39,11 @@ const Support = () => {
   return (
    <>
       <Nav/>
+      {isAlertOpen && (
+         <div className='alertMessage'>
+            <div>Thank you for your response, we will reply you through your email <button title='button' type='button' onClick={closeAlertModal}><FontAwesomeIcon icon={faXmark} size='lg' className='fa-close'/></button></div>
+         </div>
+      )}
       <div className="container mt-5">
          <div className='conta1'>
             <h2>Need Help?</h2>
@@ -68,7 +86,7 @@ Sending bulk email campaigns to many recipients at once. Tracking the performanc
                   <label className="form-label" htmlFor="message">
                      Subject
                   </label>
-                  <textarea className="form-control" title='subject' id="subject" required />
+                  <input className="form-control" title='subject' type="text" id="subject" required />
                </div>
                <div className="mb-3">
                   <label className="form-label" htmlFor="message">
