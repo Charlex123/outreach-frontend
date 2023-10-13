@@ -66,6 +66,12 @@ Sending bulk email campaigns to many recipients at once. Tracking the performanc
                </div>
                <div className="mb-3">
                   <label className="form-label" htmlFor="message">
+                     Subject
+                  </label>
+                  <textarea className="form-control" title='subject' id="subject" required />
+               </div>
+               <div className="mb-3">
+                  <label className="form-label" htmlFor="message">
                      Message
                   </label>
                   <textarea className="form-control" id="message" required />
