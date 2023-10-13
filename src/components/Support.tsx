@@ -19,7 +19,7 @@ const Support = () => {
       setFormStatus('Submit');
       setAlertOpen(false)
    }
-   
+
    const onSubmit = (e: any) => {
       e.preventDefault()
       setFormStatus('Submitted');
@@ -69,7 +69,7 @@ Sending bulk email campaigns to many recipients at once. Tracking the performanc
          </div>
          <div className='conta2'>
             <form onSubmit={onSubmit}>
-               <h2 className="mb-3"> Contact Us </h2>
+               <h2 className="mb-3"> Send Us A Message</h2>
                <div className="mb-3">
                   <label className="form-label" htmlFor="name">
                      Name
