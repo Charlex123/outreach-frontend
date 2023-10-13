@@ -36,25 +36,15 @@ const Support = () => {
                <Accordion.Item eventKey="0">
                <Accordion.Header className='accheader'>What is TheOutreach?</Accordion.Header>
                <Accordion.Body className='accbody'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                  minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in
-                  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum.
+                  TheOutreach.co, is a gmail mass sender, that organizes, records and tracks email campaigns for effective marketing.
                </Accordion.Body>
                </Accordion.Item>
                <Accordion.Item eventKey="1">
                <Accordion.Header className='accheader'>How can TheOutreach improve your business?</Accordion.Header>
                <Accordion.Body className='accbody'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                  minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in
-                  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum.
+               At The Outreach, we offer a range of features and benefits to enhance your email marketing experience, including but not limited to:
+
+Sending bulk email campaigns to many recipients at once. Tracking the performance of your email campaigns at several time intervals of your preference. Sending test mail campaigns for experimental purposes to optimize your outreach strategies. Creating email campaign drafts and scheduling them for future delivery. Automating follow-ups and reminders to improve engagement with your recipients. And many more features designed to optimize your email outreach efforts.
                </Accordion.Body>
                </Accordion.Item>
             </Accordion>
