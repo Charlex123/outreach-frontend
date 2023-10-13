@@ -30,9 +30,9 @@ const Support = () => {
          <div className='conta1'>
             <h2>Need Help?</h2>
             <p>Send us a message</p>
-            <p>We're always here for your queries</p>
+            <p>We're always here to answer all your queries</p>
 
-            <Accordion defaultActiveKey="0" flush>
+            <Accordion defaultActiveKey="0" className='mt-5' flush>
                <Accordion.Item eventKey="0">
                <Accordion.Header className='accheader'>What is TheOutreach?</Accordion.Header>
                <Accordion.Body className='accbody'>
