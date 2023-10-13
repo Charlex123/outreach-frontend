@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import './styles/App.css';
 import './styles/privacy_terms.css';
 import './styles/Home.css';
+import './styles/Support.css';
 import DataProvider from './context/authcontext';
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
