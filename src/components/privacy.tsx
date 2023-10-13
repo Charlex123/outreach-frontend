@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { Overlay } from '../App'
-import axios from 'axios';
-import Modal from './Modal'
-import FileUploadModal from './Modal/FileUploadModal';
-import { OutreachButton } from './styles/ButtonVariants.styled';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
+// import { Overlay } from '../App'
+// import axios from 'axios';
+// import Modal from './Modal'
+// import FileUploadModal from './Modal/FileUploadModal';
+// import { OutreachButton } from './styles/ButtonVariants.styled';
+// import Container from 'react-bootstrap/Container';
+import Nav from './Nav';
 import logo from '../../src/assets/images/logo.png';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import Table from 'react-bootstrap/Table';
+// import Navbar from 'react-bootstrap/Navbar';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
+// import { Link } from 'react-router-dom';
+// import Button from 'react-bootstrap/Button';
+// import Offcanvas from 'react-bootstrap/Offcanvas';
+// import Table from 'react-bootstrap/Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas, faCheck, faCheckCircle, faCheckSquare, faCheckDouble, faRightFromBracket, faAlignJustify } from '@fortawesome/free-solid-svg-icons'
@@ -44,15 +44,8 @@ const Privacy = () => {
 
    return (
       <div className='ptmain'>
-         <Navbar collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark" className="bg-body-tertiary">
-            <Container className="d-flex justify-content-between">
-            <Navbar.Brand href="#"><img src={logo} alt='logo'/></Navbar.Brand>
-            <div>
-               <span className='text-white m-lg-2 uemail'>{userEmail}</span>
-               <Button onClick={handleShow} variant='secondary'><FontAwesomeIcon icon={faAlignJustify} size='lg' className='text-white'/></Button>
-            </div>
-            </Container>
-         </Navbar>
+         <Nav/>
+            
          <div className='mainer'>
             <h1>Privacy Policy for TheOutreach.co</h1>
             <h2>Last Updated: September 22, 2023</h2>

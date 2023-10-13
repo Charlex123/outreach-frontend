@@ -2,10 +2,10 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import Social from "./components/Social";
 import Dashboard from "./components/Dashboard";
 import Login from './components/Login';
+import Home from './components/Home';
 import Privacy from './components/privacy';
 import Terms from './components/terms';
 import Support from './components/Support';
-
 
 // ----------------------------------------------------------------------
 
@@ -16,6 +16,6 @@ export default function Router() {
     { path: '/privacy-policy', element: <Privacy /> },
     { path: '/terms', element: <Terms /> },
     { path: '/support', element: <Support /> },
-    { path: '/', element: <Login /> },
+    { path: '/', element: <Home /> },
   ]);
 }

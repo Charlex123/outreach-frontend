@@ -28,7 +28,7 @@ const Footer = () => {
    
    return (
       <div>
-         <div className='footer'><div className='footam'><br></br><br></br>TheOutreach | ©2023 <a href='privacy-policy' rel='noopener noreferrer'>Privacy Policy</a> <a href='terms' rel='noopener noreferrer'>Terms</a>  <br></br><br></br><br></br></div></div>
+         <div className='footer text-white'><div className='footam p-4'><br></br><br></br>TheOutreach | ©2023 <a href='privacy-policy' rel='noopener noreferrer' className='text-white ml-4'>Privacy Policy</a> <a href='terms' rel='noopener noreferrer' className='text-white ml-8'>Terms</a> <a href='support' rel='noopener noreferrer' className='text-white ml-2'>Support</a>  <br></br><br></br><br></br></div></div>
       </div>
    )
    }
