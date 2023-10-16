@@ -16,6 +16,7 @@ import theoimg from '../assets/images/man2.jpg';
 // import Button from 'react-bootstrap/Button';
 // import Offcanvas from 'react-bootstrap/Offcanvas';
 // import Table from 'react-bootstrap/Table';
+
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import Footer from './Footer';
@@ -32,7 +33,6 @@ library.add(fas, faTwitter, faFontAwesome,faQuestionCircle, faCheck,faCheckCircl
 const Home = () => {
 // Create a state variable to manage the visibility of the navigation menu
 const [isNavOpen, setNavOpen] = useState(false);
-const videoFile =  require('../assets/videos/marketingvideo.mp4');
 
 useEffect(() => {
   // Function to handle window resize
@@ -111,7 +111,7 @@ const toggleNav = () => {
         </div>
         <div className='pc_vid'>
           <video loop controls>
-            <source src={videoFile} type="video/mp4" />
+            <source src='https://outreachvideo.s3.us-east-2.amazonaws.com/marketingvideo.mp4' type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
