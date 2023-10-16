@@ -77,6 +77,7 @@ const Privacy = () => {
                <li>Operating system</li>
                <li>Referring website</li>
             </ul>
+            
             <h3>4. How We Use Your Information</h3>
             <h4>We use the collected information for the following purposes:</h4>
             <h4>4.1 Providing Services</h4>
@@ -85,40 +86,42 @@ const Privacy = () => {
                <li>To communicate with you regarding our services</li>
                <li>To process transactions and payments</li>
             </ul>
-            <h4>4.2 Analytics and Improvements</h4>
+            <h3>5. Google Data Usage</h3>
+            <h4>5.1 Analytics and Improvements</h4>
             <ul>
                <li>To analyze user behavior and trends</li>
                <li>To improve our website and services</li>
                <li>To customize content and user experience</li>
             </ul>
-            <h4>4.3 Marketing and Communications</h4>
-            <h4>To send promotional materials and updates</h4>
+            <h4>5.2 Marketing and Communications</h4>
+            <h4>5.3 To send promotional materials and updates</h4>
             <ul>
                <li>To send promotional materials and updates</li>
                <li>To respond to inquiries and support requests</li>
             </ul>
-            <h3>5. Sharing Your Information</h3>
-            <p>We may share your information with third parties under the following circumstances:</p>
-            <h4>5.1 Service Providers</h4>
-            <p>We may share your information with third-party service providers who help us deliver our services.</p>
-            <h4>5.2 Legal Compliance</h4>
-            <p>We may disclose your information if required by law or in response to legal requests.</p>
-            <h4>5.3 Business Transfers</h4>
+            <h3>6. Sharing Your Information</h3>
+            <p>We will not share your sensitive information with any third parties under any circumstances:</p>
+            <p>We may only share your non-sensitive information like email address with any third parties under the following circumstances:</p>
+            <h4>6.1 Service Providers</h4>
+            <p>We may share your non-sensitive information with third-party service providers who help us deliver our services.</p>
+            <h4>6.2 Legal Compliance</h4>
+            <p>We may disclose your non-sensitive information if required by law or in response to legal requests.</p>
+            <h4>6.3 Business Transfers</h4>
             <p>In the event of a merger, acquisition, or sale of assets, your information may be transferred to the acquiring entity.</p>
-            <h3>6. Security</h3>
+            <h3>7. Security</h3>
             <p>We implement reasonable security measures to protect your information from unauthorized access, disclosure, or alteration.</p>
-            <h3>7. Your Choices</h3>
+            <h3>8. Your Choices</h3>
             <h4>You have the following choices regarding your personal information:</h4>
             <ul>
                <li>You can update or correct your information by contacting us.</li>
                <li>You can opt-out of receiving marketing communications from us.</li>
                <li>You can request the deletion of your account and personal data, subject to legal requirements.</li>
             </ul>
-            <h3>8. Children's Privacy</h3>
+            <h3>9. Children's Privacy</h3>
             <p>Our services are not intended for children under the age of 13. We do not knowingly collect or maintain information from children.</p>
-            <h3>9. Changes to this Privacy Policy</h3>
+            <h3>10. Changes to this Privacy Policy</h3>
             <p>We may update this Privacy Policy from time to time. The most recent version will be posted on our website with the last updated date.</p>
-            <h3>10. Contact Us</h3>
+            <h3>11. Contact Us</h3>
             <p>If you have any questions or concerns about this Privacy Policy or our practices, please contact us at <a href='mailto:Alexryancl@gmail.com' rel="noopener noreferrer">Alexryancl@gmail.com</a></p>
          </div>
          <Footer/>

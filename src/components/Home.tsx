@@ -4,8 +4,8 @@ import React from 'react'
 // import {HashRouter as Router,} from "react-router-dom";
 // import Container from 'react-bootstrap/Container';
 import { useState, useEffect } from 'react';
-import logo from '../../src/assets/images/logo.png';
-import shirnelimg from '../assets/images/woman.jpeg';
+import signbtn from '../../src/assets/images/googlesignbtn.png';
+import shirnelimg from '../assets/images/jake-nackos.jpg';
 import danimg from '../assets/images/man.jpg';
 import theoimg from '../assets/images/man2.jpg';
 // import Navbar from 'react-bootstrap/Navbar';
@@ -78,8 +78,8 @@ const toggleNav = () => {
               <p>Send, organize and track your email campaigns for maximum outreach, engagement, conversions and sales</p>
             </div>
             <div className='get_sd_btns'>
-              <button title='get started' type='button'>Get Started</button>
-              <a href='download' rel='noopener noreferrer'>Learn More</a>
+              <a title='get started' href={process.env.REACT_APP_REDIRECT_LIVE} rel='noopener noreferrer'><img src={signbtn}  alt='Google Sign In' className='gsignin' /></a>
+              <a href='download' rel='noopener noreferrer' className='learnmore'>Learn More</a>
             </div>
           </div>
           <div className='hero_image'>
