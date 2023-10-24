@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+// import signbtn from '../../src/assets/images/googlesignbtn.png';
 import logo from '../../src/assets/images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -57,7 +58,6 @@ const toggleNav = () => {
                 <li><a href='/privacy-policy' rel='noopener noreferrer'>Privacy</a></li>
               </ul>
               <ul>
-                <li className='signin'><a href={process.env.REACT_APP_REDIRECT_LIVE} rel='noopener noreferrer'>Sign In <FontAwesomeIcon icon={faUserCircle} size='lg' className='user-icon'/></a></li>
                 <li className='spt'><a href='/support' rel='noopener noreferrer'>Support <FontAwesomeIcon icon={faQuestionCircle} size='lg' className='toggle-icon'/></a></li>
               </ul>
             </div>)
