@@ -105,7 +105,7 @@ interface CampaignDetails {
                "Content-type": "application/json"
             }
             }  
-            const {data} = await axios.post("https://theoutreachapp.onreander.com/user/verifyuserdata", {
+            const {data} = await axios.post("https://backend.theoutreach.co/user/verifyuserdata", {
                userappkey
             }, config);
             localStorage.setItem("userData_", JSON.stringify(data))
@@ -125,7 +125,7 @@ interface CampaignDetails {
                "Content-type": "application/json"
             }
             }  
-            const {data} = await axios.post("https://theoutreachapp.onreander.com/campaigns/campaignsdetails", {
+            const {data} = await axios.post("https://backend.theoutreach.co/campaigns/campaignsdetails", {
                userappkey
             }, config);
             setcampaignDetails(data.campaigndetails)
@@ -141,7 +141,7 @@ interface CampaignDetails {
                "Content-type": "application/json"
             }
             }  
-            const {data} = await axios.post("https://theoutreachapp.onreander.com/campaigns/draftscount", {
+            const {data} = await axios.post("https://backend.theoutreach.co/campaigns/draftscount", {
                userappkey
             }, config);
             setdraftCount(data.draftcount);
@@ -158,7 +158,7 @@ interface CampaignDetails {
                "Content-type": "application/json"
             }
             }  
-            const {data} = await axios.post("https://theoutreachapp.onreander.com/campaigns/openscount", {
+            const {data} = await axios.post("https://backend.theoutreach.co/campaigns/openscount", {
                userappkey
             }, config);
             setopenCampaignCount(data.opencampaigncount);
