@@ -178,7 +178,7 @@ interface CampaignDetails {
       <div>
          <Navbar collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark" className="bg-body-tertiary">
             <Container className="d-flex justify-content-between">
-            <Navbar.Brand href="#"><img src={logo} alt='logo'/></Navbar.Brand>
+            <Navbar.Brand href="https://theoutreach.co"><img src={logo} alt='logo'/></Navbar.Brand>
             <div>
                <span className='text-white m-lg-2 uemail'>{userEmail}</span>
                <Button onClick={handleShow} variant='secondary'><FontAwesomeIcon icon={faAlignJustify} size='lg' className='text-white'/></Button>
