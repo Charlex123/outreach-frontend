@@ -78,7 +78,7 @@ const toggleNav = () => {
               <p>Send, organize and track your email campaigns for maximum outreach, engagement, conversions and sales</p>
             </div>
             <div className='get_sd_btns'>
-              <a title='get started' href={process.env.REACT_APP_REDIRECT} rel='noopener noreferrer'><img src={signbtn}  alt='Google Sign In' className='gsignin' /></a>
+              <a title='get started' href={process.env.REACT_APP_REDIRECT_LIVE} rel='noopener noreferrer'><img src={signbtn}  alt='Google Sign In' className='gsignin' /></a>
               <a href='download' rel='noopener noreferrer' className='learnmore'>Learn More</a>
             </div>
           </div>
