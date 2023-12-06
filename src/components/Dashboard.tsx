@@ -105,7 +105,7 @@ interface CampaignDetails {
                "Content-type": "application/json"
             }
             }  
-            const {data} = await axios.post("https://backend.theoutreach.co/user/verifyuserdata", {
+            const {data} = await axios.post("https://theoutreachapp.onrender.com/user/verifyuserdata", {
                userappkey
             }, config);
             localStorage.setItem("userData_", JSON.stringify(data))
@@ -125,7 +125,7 @@ interface CampaignDetails {
                "Content-type": "application/json"
             }
             }  
-            const {data} = await axios.post("https://backend.theoutreach.co/campaigns/campaignsdetails", {
+            const {data} = await axios.post("https://theoutreachapp.onrender.com/campaigns/campaignsdetails", {
                userappkey
             }, config);
             setcampaignDetails(data.campaigndetails)
@@ -141,7 +141,7 @@ interface CampaignDetails {
                "Content-type": "application/json"
             }
             }  
-            const {data} = await axios.post("https://backend.theoutreach.co/campaigns/draftscount", {
+            const {data} = await axios.post("https://theoutreachapp.onrender.com/campaigns/draftscount", {
                userappkey
             }, config);
             setdraftCount(data.draftcount);
@@ -154,11 +154,11 @@ interface CampaignDetails {
       async function getopenscount() {
          try {
             const config = {
-            headers: {
-               "Content-type": "application/json"
-            }
+               headers: {
+                  "Content-type": "application/json"
+               }
             }  
-            const {data} = await axios.post("https://backend.theoutreach.co/campaigns/openscount", {
+            const {data} = await axios.post("https://theoutreachapp.onrender.com/campaigns/openscount", {
                userappkey
             }, config);
             setopenCampaignCount(data.opencampaigncount);
